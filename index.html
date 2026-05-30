@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum of Seeing Prototype</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="overview-panel">
+        <p class="eyebrow">Prototype</p>
+        <h1>Museum of Seeing</h1>
+        <p class="lede">
+          A children's aesthetic adventure app prototype for ages 7-9. This mockup
+          tests one complete loop: explore a world, notice a work, make something,
+          and collect the result.
+        </p>
+
+        <div class="overview-card">
+          <p class="overview-label">Flow</p>
+          <ol class="flow-list">
+            <li>Choose a world from the map</li>
+            <li>Play the Daily Spark mission</li>
+            <li>Create with colors and shapes</li>
+            <li>Unlock a new collection card</li>
+          </ol>
+        </div>
+
+        <div class="overview-card">
+          <p class="overview-label">What To Look For</p>
+          <ul class="check-list">
+            <li>Does it feel playful instead of school-like?</li>
+            <li>Does the mission naturally lead into creation?</li>
+            <li>Does the reward feel like identity, not points?</li>
+          </ul>
+        </div>
+
+        <div class="overview-card status-card">
+          <p class="overview-label">Session</p>
+          <div class="status-row">
+            <span>World</span>
+            <strong id="status-world">Color Harbor</strong>
+          </div>
+          <div class="status-row">
+            <span>Mission</span>
+            <strong id="status-mission">Not started</strong>
+          </div>
+          <div class="status-row">
+            <span>Creation</span>
+            <strong id="status-creation">0 / 3 pieces placed</strong>
+          </div>
+        </div>
+      </aside>
+
+      <main class="prototype-stage">
+        <section class="phone-frame">
+          <header class="phone-topbar">
+            <div class="profile-chip">
+              <div class="avatar">M</div>
+              <div>
+                <p class="micro-copy">Explorer</p>
+                <strong>Museum of Seeing</strong>
+              </div>
+            </div>
+            <button class="icon-button" type="button" aria-label="Settings">⚙</button>
+          </header>
+
+          <section class="screen screen-map active" data-screen="map">
+            <div class="map-card">
+              <p class="map-kicker">Choose a world to explore</p>
+              <div class="map-art">
+                <button class="world-badge world-color" type="button" data-target-screen="mission">
+                  Color Harbor
+                </button>
+                <button class="world-badge world-shape" type="button" data-target-screen="mission">
+                  Shape Forest
+                </button>
+                <button class="world-badge world-mood" type="button" data-target-screen="mission">
+                  Mood Palace
+                </button>
+                <button class="spark-button" type="button" data-target-screen="mission">
+                  <span>Daily Spark</span>
+                  <small>Today's mission</small>
+                </button>
+              </div>
+            </div>
+
+            <div class="home-panels">
+              <article class="mini-panel">
+                <p class="panel-title">Today's Guide</p>
+                <p>The sunset room is glowing. Can you catch the three colors that make it feel warm?</p>
+              </article>
+              <article class="mini-panel">
+                <p class="panel-title">New Creature</p>
+                <p>Complete one mission to wake the Lantern Sprout.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="screen screen-mission" data-screen="mission">
+            <div class="mission-header">
+              <button class="back-link" type="button" data-target-screen="map">←</button>
+              <div>
+                <p class="micro-copy">Daily Spark</p>
+                <h2>Catch the three colors of sunset.</h2>
+              </div>
+            </div>
+
+            <div class="artwork-card">
+              <div class="artwork-frame">
+                <div class="artwork-scene">
+                  <div class="sun"></div>
+                  <div class="sky sky-one"></div>
+                  <div class="sky sky-two"></div>
+                  <div class="water"></div>
+                  <div class="boat"></div>
+                </div>
+              </div>
+              <div class="guide-bubble">
+                <div class="guide-face">◕‿◕</div>
+                <p>There are many good answers in art. Pick the colors you notice first.</p>
+              </div>
+            </div>
+
+            <div class="choice-grid" id="color-choices">
+              <button class="choice-chip" type="button" data-color="Sunset Orange">Sunset Orange</button>
+              <button class="choice-chip" type="button" data-color="Blush Pink">Blush Pink</button>
+              <button class="choice-chip" type="button" data-color="Deep Blue">Deep Blue</button>
+              <button class="choice-chip" type="button" data-color="Forest Moss">Forest Moss</button>
+            </div>
+
+            <div class="mission-footer">
+              <p id="mission-feedback">Choose three colors to open the studio.</p>
+              <button class="primary-button" type="button" id="enter-studio" disabled data-target-screen="studio">
+                Create with these colors
+              </button>
+            </div>
+          </section>
+
+          <section class="screen screen-studio" data-screen="studio">
+            <div class="mission-header">
+              <button class="back-link" type="button" data-target-screen="mission">←</button>
+              <div>
+                <p class="micro-copy">Creative Studio</p>
+                <h2>Build your sunset collage.</h2>
+              </div>
+            </div>
+
+            <div class="palette-row" id="selected-palette"></div>
+
+            <div class="studio-canvas" id="studio-canvas">
+              <div class="canvas-label">Your canvas</div>
+              <div class="canvas-scene" id="canvas-scene"></div>
+            </div>
+
+            <div class="piece-tray">
+              <button class="piece" type="button" data-piece="sun">Sun</button>
+              <button class="piece" type="button" data-piece="wave">Wave</button>
+              <button class="piece" type="button" data-piece="sail">Sail</button>
+              <button class="piece" type="button" data-piece="cloud">Cloud</button>
+            </div>
+
+            <div class="mission-footer">
+              <p id="studio-feedback">Place three pieces to finish your artwork.</p>
+              <button class="primary-button" type="button" id="finish-creation" disabled data-target-screen="collection">
+                Save to collection
+              </button>
+            </div>
+          </section>
+
+          <section class="screen screen-collection" data-screen="collection">
+            <div class="collection-header">
+              <div>
+                <p class="micro-copy">My Collection</p>
+                <h2>Your cabinet of seeing</h2>
+              </div>
+              <div class="creature-card">
+                <div class="creature-face">✦</div>
+                <p>Lantern Sprout is awake.</p>
+              </div>
+            </div>
+
+            <div class="card-shelf" id="card-shelf">
+              <article class="collect-card locked">
+                <div class="collect-dot"></div>
+                <p>Find more colors</p>
+              </article>
+            </div>
+
+            <div class="creation-shelf" id="creation-shelf">
+              <article class="saved-creation empty">
+                <p>Your new collage will appear here.</p>
+              </article>
+            </div>
+
+            <div class="mission-footer">
+              <p id="collection-feedback">Finish the mission to unlock your first color set.</p>
+              <button class="primary-button" type="button" data-target-screen="map">
+                Explore another world
+              </button>
+            </div>
+          </section>
+
+          <nav class="bottom-nav">
+            <button class="nav-tab active" type="button" data-target-screen="map">Map</button>
+            <button class="nav-tab" type="button" data-target-screen="studio">Studio</button>
+            <button class="nav-tab" type="button" data-target-screen="collection">Collection</button>
+            <button class="nav-tab" type="button" data-target-screen="parents">Parents</button>
+          </nav>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
