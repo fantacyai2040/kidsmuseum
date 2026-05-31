@@ -16,7 +16,7 @@
   --teal: #0c4b58;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
   --display-font: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --ui-font: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  --ui-font: "Avenir Next", "Trebuchet MS", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
 }
 
 * {
@@ -184,6 +184,7 @@ button {
 }
 
 .icon-button,
+.language-button,
 .back-link,
 .nav-tab,
 .choice-chip,
@@ -196,12 +197,17 @@ button {
 }
 
 .icon-button,
+.language-button,
 .back-link {
   width: 42px;
   height: 42px;
   border-radius: 50%;
   background: rgba(241, 223, 191, 0.16);
   color: #fff7e2;
+}
+
+.language-button {
+  font-weight: 900;
 }
 
 .screen {

@@ -9,45 +9,45 @@
   <body>
     <div class="page-shell">
       <aside class="overview-panel">
-        <p class="eyebrow">Prototype</p>
-        <h1>Museum of Seeing</h1>
-        <p class="lede">
+        <p class="eyebrow" data-i18n="prototype">Prototype</p>
+        <h1 id="overview-title">Museum of Seeing</h1>
+        <p class="lede" data-i18n="overviewLede">
           A children's aesthetic adventure app prototype for ages 7-9. This mockup
           tests one complete loop: explore a world, notice a work, make something,
           and collect the result.
         </p>
 
         <div class="overview-card">
-          <p class="overview-label">Flow</p>
+          <p class="overview-label" data-i18n="flowLabel">Flow</p>
           <ol class="flow-list">
-            <li>Choose a world from the map</li>
-            <li>Play the Daily Spark mission</li>
-            <li>Create with colors and shapes</li>
-            <li>Unlock a new collection card</li>
+            <li data-i18n="flowOne">Choose a world from the map</li>
+            <li data-i18n="flowTwo">Play the Daily Spark mission</li>
+            <li data-i18n="flowThree">Create with colors and shapes</li>
+            <li data-i18n="flowFour">Unlock a new collection card</li>
           </ol>
         </div>
 
         <div class="overview-card">
-          <p class="overview-label">What To Look For</p>
+          <p class="overview-label" data-i18n="lookForLabel">What To Look For</p>
           <ul class="check-list">
-            <li>Does it feel playful instead of school-like?</li>
-            <li>Does the mission naturally lead into creation?</li>
-            <li>Does the reward feel like identity, not points?</li>
+            <li data-i18n="lookForOne">Does it feel playful instead of school-like?</li>
+            <li data-i18n="lookForTwo">Does the mission naturally lead into creation?</li>
+            <li data-i18n="lookForThree">Does the reward feel like identity, not points?</li>
           </ul>
         </div>
 
         <div class="overview-card status-card">
-          <p class="overview-label">Session</p>
+          <p class="overview-label" data-i18n="sessionLabel">Session</p>
           <div class="status-row">
-            <span>World</span>
+            <span data-i18n="statusWorldLabel">World</span>
             <strong id="status-world">Color Harbor</strong>
           </div>
           <div class="status-row">
-            <span>Mission</span>
+            <span data-i18n="statusMissionLabel">Mission</span>
             <strong id="status-mission">Not started</strong>
           </div>
           <div class="status-row">
-            <span>Creation</span>
+            <span data-i18n="statusCreationLabel">Creation</span>
             <strong id="status-creation">0 / 3 pieces placed</strong>
           </div>
         </div>
@@ -59,48 +59,48 @@
             <div class="profile-chip">
               <div class="avatar">M</div>
               <div>
-                <p class="micro-copy">Explorer</p>
-                <strong>Museum of Seeing</strong>
+                <p class="micro-copy" data-i18n="explorer">Explorer</p>
+                <strong data-i18n="appName">Museum of Seeing</strong>
               </div>
             </div>
-            <button class="icon-button" type="button" aria-label="Settings">⚙</button>
+            <button class="language-button" type="button" id="language-toggle" aria-label="Switch language">简</button>
           </header>
 
           <section class="screen screen-map active" data-screen="map">
             <div class="map-card">
-              <p class="map-kicker">Choose a world to explore</p>
+              <p class="map-kicker" data-i18n="mapKicker">Choose a world to explore</p>
               <div class="map-art">
                 <button class="world-badge world-color" type="button" data-world="color" data-target-screen="mission">
-                  Color Harbor
+                  <span data-world-label="color">Color Harbor</span>
                 </button>
                 <button class="world-badge world-shape" type="button" data-world="shape" data-target-screen="mission">
-                  Shape Forest
+                  <span data-world-label="shape">Shape Forest</span>
                 </button>
                 <button class="world-badge world-mood" type="button" data-world="mood" data-target-screen="mission">
-                  Mood Palace
+                  <span data-world-label="mood">Mood Palace</span>
                 </button>
                 <button class="spark-button" type="button" data-world="color" data-target-screen="mission">
-                  <span>Daily Spark</span>
-                  <small>Today's mission</small>
+                  <span data-i18n="dailySpark">Daily Spark</span>
+                  <small data-i18n="todaysMission">Today's mission</small>
                 </button>
               </div>
             </div>
 
             <div class="home-panels">
               <article class="mini-panel">
-                <p class="panel-title">Today's Guide</p>
+                <p class="panel-title" data-i18n="todaysGuide">Today's Guide</p>
                 <p id="guide-copy">The sunset room is glowing. Can you catch the three colors that make it feel warm?</p>
               </article>
               <article class="mini-panel">
-                <p class="panel-title">New Creature</p>
-                <p>Complete one mission to wake the Lantern Sprout.</p>
+                <p class="panel-title" data-i18n="newCreature">New Creature</p>
+                <p id="new-creature-copy">Complete one mission to wake the Lantern Sprout.</p>
               </article>
             </div>
           </section>
 
           <section class="screen screen-mission" data-screen="mission">
             <div class="mission-header">
-              <button class="back-link" type="button" data-target-screen="map">←</button>
+              <button class="back-link" type="button" data-target-screen="map" aria-label="Back">←</button>
               <div>
                 <p class="micro-copy" id="mission-world">Daily Spark</p>
                 <h2 id="mission-title">Catch the three colors of sunset.</h2>
@@ -131,16 +131,16 @@
             <div class="mission-footer">
               <p id="mission-feedback">Choose three colors to open the studio.</p>
               <button class="primary-button" type="button" id="enter-studio" disabled data-target-screen="studio">
-                Create with these colors
+                <span data-i18n="enterStudio">Create with these colors</span>
               </button>
             </div>
           </section>
 
           <section class="screen screen-studio" data-screen="studio">
             <div class="mission-header">
-              <button class="back-link" type="button" data-target-screen="mission">←</button>
+              <button class="back-link" type="button" data-target-screen="mission" aria-label="Back">←</button>
               <div>
-                <p class="micro-copy">Creative Studio</p>
+                <p class="micro-copy" data-i18n="creativeStudio">Creative Studio</p>
                 <h2 id="studio-title">Build your sunset collage.</h2>
               </div>
             </div>
@@ -148,21 +148,21 @@
             <div class="palette-row" id="selected-palette"></div>
 
             <div class="studio-canvas" id="studio-canvas">
-              <div class="canvas-label">Your canvas</div>
+              <div class="canvas-label" data-i18n="yourCanvas">Your canvas</div>
               <div class="canvas-scene" id="canvas-scene"></div>
             </div>
 
             <div class="piece-tray">
-              <button class="piece" type="button" data-piece="sun">Sun</button>
-              <button class="piece" type="button" data-piece="wave">Wave</button>
-              <button class="piece" type="button" data-piece="sail">Sail</button>
-              <button class="piece" type="button" data-piece="cloud">Cloud</button>
+              <button class="piece" type="button" data-piece="sun"></button>
+              <button class="piece" type="button" data-piece="wave"></button>
+              <button class="piece" type="button" data-piece="sail"></button>
+              <button class="piece" type="button" data-piece="cloud"></button>
             </div>
 
             <div class="mission-footer">
               <p id="studio-feedback">Place three pieces to finish your artwork.</p>
               <button class="primary-button" type="button" id="finish-creation" disabled data-target-screen="collection">
-                Save to collection
+                <span data-i18n="saveToCollection">Save to collection</span>
               </button>
             </div>
           </section>
@@ -170,7 +170,7 @@
           <section class="screen screen-collection" data-screen="collection">
             <div class="collection-header">
               <div>
-                <p class="micro-copy">My Collection</p>
+                <p class="micro-copy" data-i18n="myCollection">My Collection</p>
                 <h2>Your cabinet of seeing</h2>
               </div>
               <div class="creature-card">
@@ -195,16 +195,16 @@
             <div class="mission-footer">
               <p id="collection-feedback">Finish the mission to unlock your first color set.</p>
               <button class="primary-button" type="button" data-target-screen="map">
-                Explore another world
+                <span data-i18n="exploreAnother">Explore another world</span>
               </button>
             </div>
           </section>
 
           <nav class="bottom-nav">
-            <button class="nav-tab active" type="button" data-target-screen="map">Map</button>
-            <button class="nav-tab" type="button" data-target-screen="studio">Studio</button>
-            <button class="nav-tab" type="button" data-target-screen="collection">Collection</button>
-            <button class="nav-tab" type="button" data-target-screen="parents">Parents</button>
+            <button class="nav-tab active" type="button" data-target-screen="map" data-i18n="navMap">Map</button>
+            <button class="nav-tab" type="button" data-target-screen="studio" data-i18n="navStudio">Studio</button>
+            <button class="nav-tab" type="button" data-target-screen="collection" data-i18n="navCollection">Collection</button>
+            <button class="nav-tab" type="button" data-target-screen="parents" data-i18n="navParents">Parents</button>
           </nav>
         </section>
       </main>
