@@ -70,16 +70,16 @@
             <div class="map-card">
               <p class="map-kicker">Choose a world to explore</p>
               <div class="map-art">
-                <button class="world-badge world-color" type="button" data-target-screen="mission">
+                <button class="world-badge world-color" type="button" data-world="color" data-target-screen="mission">
                   Color Harbor
                 </button>
-                <button class="world-badge world-shape" type="button" data-target-screen="mission">
+                <button class="world-badge world-shape" type="button" data-world="shape" data-target-screen="mission">
                   Shape Forest
                 </button>
-                <button class="world-badge world-mood" type="button" data-target-screen="mission">
+                <button class="world-badge world-mood" type="button" data-world="mood" data-target-screen="mission">
                   Mood Palace
                 </button>
-                <button class="spark-button" type="button" data-target-screen="mission">
+                <button class="spark-button" type="button" data-world="color" data-target-screen="mission">
                   <span>Daily Spark</span>
                   <small>Today's mission</small>
                 </button>
@@ -89,7 +89,7 @@
             <div class="home-panels">
               <article class="mini-panel">
                 <p class="panel-title">Today's Guide</p>
-                <p>The sunset room is glowing. Can you catch the three colors that make it feel warm?</p>
+                <p id="guide-copy">The sunset room is glowing. Can you catch the three colors that make it feel warm?</p>
               </article>
               <article class="mini-panel">
                 <p class="panel-title">New Creature</p>
@@ -102,32 +102,30 @@
             <div class="mission-header">
               <button class="back-link" type="button" data-target-screen="map">←</button>
               <div>
-                <p class="micro-copy">Daily Spark</p>
-                <h2>Catch the three colors of sunset.</h2>
+                <p class="micro-copy" id="mission-world">Daily Spark</p>
+                <h2 id="mission-title">Catch the three colors of sunset.</h2>
               </div>
             </div>
 
             <div class="artwork-card">
               <div class="artwork-frame">
-                <div class="artwork-scene">
-                  <div class="sun"></div>
-                  <div class="sky sky-one"></div>
-                  <div class="sky sky-two"></div>
-                  <div class="water"></div>
-                  <div class="boat"></div>
-                </div>
+                <img id="mission-artwork" class="artwork-image" alt="">
+              </div>
+              <div class="artwork-meta">
+                <strong id="artwork-title"></strong>
+                <span id="artwork-credit"></span>
               </div>
               <div class="guide-bubble">
                 <div class="guide-face">◕‿◕</div>
-                <p>There are many good answers in art. Pick the colors you notice first.</p>
+                <p id="mission-guide">There are many good answers in art. Pick the colors you notice first.</p>
               </div>
             </div>
 
             <div class="choice-grid" id="color-choices">
-              <button class="choice-chip" type="button" data-color="Sunset Orange">Sunset Orange</button>
-              <button class="choice-chip" type="button" data-color="Blush Pink">Blush Pink</button>
-              <button class="choice-chip" type="button" data-color="Deep Blue">Deep Blue</button>
-              <button class="choice-chip" type="button" data-color="Forest Moss">Forest Moss</button>
+              <button class="choice-chip" type="button"></button>
+              <button class="choice-chip" type="button"></button>
+              <button class="choice-chip" type="button"></button>
+              <button class="choice-chip" type="button"></button>
             </div>
 
             <div class="mission-footer">
@@ -143,7 +141,7 @@
               <button class="back-link" type="button" data-target-screen="mission">←</button>
               <div>
                 <p class="micro-copy">Creative Studio</p>
-                <h2>Build your sunset collage.</h2>
+                <h2 id="studio-title">Build your sunset collage.</h2>
               </div>
             </div>
 
@@ -177,7 +175,7 @@
               </div>
               <div class="creature-card">
                 <div class="creature-face">✦</div>
-                <p>Lantern Sprout is awake.</p>
+                <p id="creature-copy">Lantern Sprout is awake.</p>
               </div>
             </div>
 
