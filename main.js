@@ -31,7 +31,7 @@ const worldLabelNodes = [...document.querySelectorAll("[data-world-label]")];
 const collectionTitle = document.querySelector(".collection-header h2");
 const overviewTitle = document.querySelector("#overview-title");
 
-const missions = {
+let missions = {
   color: {
     world: { en: "Color Harbor", zh: "色彩港湾", fr: "Port des couleurs" },
     prompt: {
@@ -520,4 +520,28 @@ languageToggle.addEventListener("click", () => {
   render();
 });
 
-render();
+async function initialize() {
+  await loadDailyMissions();
+  render();
+}
+
+async function loadDailyMissions() {
+  try {
+    const response = await fetch(`./daily-missions.json?updated=${Date.now()}`, {
+      cache: "no-store"
+    });
+    if (!response.ok) return;
+
+    const daily = await response.json();
+    if (!daily?.missions) return;
+
+    missions = {
+      ...missions,
+      ...daily.missions
+    };
+  } catch {
+    // The static prototype still works with bundled missions when daily data is unavailable.
+  }
+}
+
+initialize();
