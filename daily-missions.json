@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-01T23:54:54.881Z",
+  "updatedAt": "2026-06-02T12:16:00.469Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "garden",
+  "query": "landscape",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at The Garden of the Tuileries on a Spring Morning. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《The Garden of the Tuileries on a Spring Morning》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe The Garden of the Tuileries on a Spring Morning. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at Landscape. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,46 +36,46 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "The Garden of the Tuileries on a Spring Morning",
-        "titleZh": "The Garden of the Tuileries on a Spring Morning",
-        "titleFr": "The Garden of the Tuileries on a Spring Morning",
+        "title": "Landscape",
+        "titleZh": "Landscape",
+        "titleFr": "Landscape",
         "credit": {
-          "en": "Camille Pissarro, 1899. The Metropolitan Museum of Art, public domain.",
-          "zh": "Camille Pissarro，1899。大都会艺术博物馆，公有领域。",
-          "fr": "Camille Pissarro, 1899. The Metropolitan Museum of Art, domaine public."
+          "en": "Jean Pillement, 1800–1830. The Metropolitan Museum of Art, public domain.",
+          "zh": "Jean Pillement，1800–1830。大都会艺术博物馆，公有领域。",
+          "fr": "Jean Pillement, 1800–1830. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1042.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/ad/web-large/ap46.67.83.jpg"
       },
       "choices": [
         [
           {
-            "en": "Moss Green",
-            "zh": "苔藓绿",
-            "fr": "Vert mousse"
+            "en": "Sun Gold",
+            "zh": "阳光金",
+            "fr": "Or soleil"
           },
-          "#40624f"
+          "#e4b34f"
         ],
         [
           {
-            "en": "Morning Blue",
-            "zh": "清晨蓝",
-            "fr": "Bleu matin"
+            "en": "River Blue",
+            "zh": "河水蓝",
+            "fr": "Bleu rivière"
           },
           "#5c93b8"
         ],
         [
           {
-            "en": "Petal Pink",
-            "zh": "花瓣粉",
-            "fr": "Rose pétale"
+            "en": "Leaf Green",
+            "zh": "叶片绿",
+            "fr": "Vert feuille"
           },
-          "#dd8a80"
+          "#40624f"
         ],
         [
           {
-            "en": "Light Cream",
-            "zh": "浅奶油",
-            "fr": "Crème claire"
+            "en": "Soft Cloud",
+            "zh": "柔云白",
+            "fr": "Nuage doux"
           },
           "#f1dfbf"
         ]
