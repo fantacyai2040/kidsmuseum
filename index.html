@@ -161,9 +161,37 @@
 
             <div class="mission-footer">
               <p id="studio-feedback">Place three pieces to finish your artwork.</p>
-              <button class="primary-button" type="button" id="finish-creation" disabled data-target-screen="collection">
+              <button class="primary-button" type="button" id="finish-creation" disabled data-target-screen="complete">
                 <span data-i18n="saveToCollection">Save to collection</span>
               </button>
+            </div>
+          </section>
+
+          <section class="screen screen-complete" data-screen="complete">
+            <div class="complete-card">
+              <div class="complete-burst">✦</div>
+              <p class="micro-copy" data-i18n="dayCompleteLabel">Day Complete</p>
+              <h2 data-i18n="dayCompleteTitle">Your museum day is complete.</h2>
+              <p id="complete-message">You noticed, created, and saved today's artwork.</p>
+
+              <div class="complete-artwork">
+                <img id="complete-artwork-image" alt="">
+                <div>
+                  <strong id="complete-artwork-title"></strong>
+                  <span id="complete-date"></span>
+                </div>
+              </div>
+
+              <div class="complete-palette" id="complete-palette"></div>
+
+              <div class="complete-actions">
+                <button class="primary-button" type="button" data-target-screen="collection">
+                  <span data-i18n="viewDiary">View seeing diary</span>
+                </button>
+                <button class="secondary-button" type="button" data-target-screen="map">
+                  <span data-i18n="backToMap">Back to map</span>
+                </button>
+              </div>
             </div>
           </section>
 

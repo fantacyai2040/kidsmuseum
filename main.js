@@ -17,6 +17,11 @@ const cardShelf = document.querySelector("#card-shelf");
 const creationShelf = document.querySelector("#creation-shelf");
 const historyShelf = document.querySelector("#history-shelf");
 const checkinCount = document.querySelector("#checkin-count");
+const completeMessage = document.querySelector("#complete-message");
+const completeArtworkImage = document.querySelector("#complete-artwork-image");
+const completeArtworkTitle = document.querySelector("#complete-artwork-title");
+const completeDate = document.querySelector("#complete-date");
+const completePalette = document.querySelector("#complete-palette");
 const guideCopy = document.querySelector("#guide-copy");
 const missionWorld = document.querySelector("#mission-world");
 const missionTitle = document.querySelector("#mission-title");
@@ -177,6 +182,10 @@ const copy = {
     creativeStudio: "Creative Studio",
     yourCanvas: "Your canvas",
     saveToCollection: "Save to collection",
+    dayCompleteLabel: "Day Complete",
+    dayCompleteTitle: "Your museum day is complete.",
+    viewDiary: "View seeing diary",
+    backToMap: "Back to map",
     myCollection: "My Collection",
     collectionTitle: "Your cabinet of seeing",
     seeingDiary: "Seeing Diary",
@@ -200,6 +209,7 @@ const copy = {
     collectionMissionDone: "Your colors are unlocked. Finish the collage to save it.",
     collectionLocked: "Finish the mission to unlock your first color set.",
     checkinSaved: "Today is recorded in your seeing diary.",
+    completeMessage: "You noticed, created, and saved today's artwork. Come back tomorrow for a new museum image.",
     checkinDays: (count) => `${count} day${count === 1 ? "" : "s"}`,
     emptyHistory: "Finish today's artwork to start your image history.",
     collageSuffix: "collage",
@@ -235,6 +245,10 @@ const copy = {
     creativeStudio: "创作工作室",
     yourCanvas: "你的画布",
     saveToCollection: "保存到收藏",
+    dayCompleteLabel: "今日完成",
+    dayCompleteTitle: "今天的博物馆日完成了。",
+    viewDiary: "查看看见日记",
+    backToMap: "回到地图",
     myCollection: "我的收藏",
     collectionTitle: "我的看见柜",
     seeingDiary: "看见日记",
@@ -258,6 +272,7 @@ const copy = {
     collectionMissionDone: "颜色已经解锁。完成拼贴后就能保存。",
     collectionLocked: "完成任务，解锁你的第一组颜色。",
     checkinSaved: "今天已经记录进你的看见日记。",
+    completeMessage: "你观察了、创作了，也保存了今天的作品。明天再来看一张新的博物馆图片。",
     checkinDays: (count) => `${count} 天`,
     emptyHistory: "完成今天的作品，就会开始留下图片历史。",
     collageSuffix: "拼贴",
@@ -293,6 +308,10 @@ const copy = {
     creativeStudio: "Atelier créatif",
     yourCanvas: "Ta toile",
     saveToCollection: "Ajouter a la collection",
+    dayCompleteLabel: "Jour terminé",
+    dayCompleteTitle: "Ta journée au musée est terminée.",
+    viewDiary: "Voir le journal",
+    backToMap: "Retour à la carte",
     myCollection: "Ma collection",
     collectionTitle: "Mon cabinet du regard",
     seeingDiary: "Journal du regard",
@@ -316,6 +335,7 @@ const copy = {
     collectionMissionDone: "Tes couleurs sont débloquées. Termine le collage pour le sauvegarder.",
     collectionLocked: "Termine la mission pour débloquer ta première palette.",
     checkinSaved: "Aujourd'hui est noté dans ton journal du regard.",
+    completeMessage: "Tu as observé, créé et sauvegardé l'oeuvre du jour. Reviens demain pour une nouvelle image de musée.",
     checkinDays: (count) => `${count} jour${count === 1 ? "" : "s"}`,
     emptyHistory: "Termine l'oeuvre du jour pour commencer ton historique d'images.",
     collageSuffix: "collage",
@@ -405,6 +425,7 @@ function render() {
   statusMission.textContent = missionDone ? t.statusPaletteFound : t.statusNotStarted;
   statusCreation.textContent = t.statusPieces(state.placedPieces.length);
 
+  renderCompletion(t);
   renderCollection(missionDone, creationDone);
 }
 
@@ -522,6 +543,25 @@ function renderHistory(t) {
     body.append(date, title);
     card.append(image, body);
     historyShelf.appendChild(card);
+  }
+}
+
+function renderCompletion(t) {
+  const mission = missions[state.missionKey];
+  const latestCheckin = state.checkins.find((checkin) => checkin.date === todayKey()) ?? state.checkins[0];
+
+  completeMessage.textContent = t.completeMessage;
+  completeArtworkImage.src = latestCheckin?.imageUrl ?? mission.artwork.url;
+  completeArtworkImage.alt = latestCheckin?.title ?? artworkName(mission.artwork);
+  completeArtworkTitle.textContent = latestCheckin?.title ?? artworkName(mission.artwork);
+  completeDate.textContent = formatCheckinDate(latestCheckin?.date ?? todayKey());
+  completePalette.innerHTML = "";
+
+  for (const colorName of state.selectedColors) {
+    const swatch = document.createElement("span");
+    swatch.style.background = colorForChoice(colorName);
+    swatch.title = colorName;
+    completePalette.appendChild(swatch);
   }
 }
 

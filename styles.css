@@ -191,7 +191,8 @@ button {
 .piece,
 .world-badge,
 .spark-button,
-.primary-button {
+.primary-button,
+.secondary-button {
   border: 0;
   cursor: pointer;
 }
@@ -442,6 +443,15 @@ button {
   font-weight: 800;
 }
 
+.secondary-button {
+  min-height: 52px;
+  border-radius: 18px;
+  background: rgba(241, 223, 191, 0.12);
+  color: #fff7e2;
+  border: 1px solid rgba(241, 223, 191, 0.24);
+  font-weight: 800;
+}
+
 .primary-button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
@@ -535,6 +545,106 @@ button {
 
 .piece.used {
   opacity: 0.45;
+}
+
+.screen-complete {
+  min-height: 100%;
+  place-items: center;
+}
+
+.complete-card {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  padding: 22px;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 220, 139, 0.32);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 217, 124, 0.42), transparent 24%),
+    radial-gradient(circle at 88% 6%, rgba(221, 138, 128, 0.28), transparent 20%),
+    linear-gradient(180deg, rgba(241, 223, 191, 0.16), rgba(241, 223, 191, 0.06));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.complete-burst {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffd76d, #de9140);
+  color: #3d2a19;
+  font-size: 2rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.complete-card h2 {
+  margin: 0;
+  max-width: 8em;
+  font-family: var(--display-font);
+  color: #fff7df;
+  font-size: 2.5rem;
+  line-height: 0.92;
+}
+
+.complete-card p {
+  margin: 0;
+  color: rgba(255, 248, 232, 0.84);
+  line-height: 1.5;
+}
+
+.complete-artwork {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 24px;
+  background: rgba(9, 38, 52, 0.42);
+  border: 1px solid rgba(241, 223, 191, 0.18);
+}
+
+.complete-artwork img {
+  display: block;
+  width: 96px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #14323f;
+}
+
+.complete-artwork div {
+  display: grid;
+  gap: 6px;
+}
+
+.complete-artwork strong {
+  color: #fff7e2;
+  line-height: 1.25;
+}
+
+.complete-artwork span {
+  color: #f5d89d;
+  font-size: 0.9rem;
+}
+
+.complete-palette {
+  display: flex;
+  gap: 10px;
+}
+
+.complete-palette span {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 248, 232, 0.22);
+}
+
+.complete-actions {
+  display: grid;
+  gap: 10px;
 }
 
 .card-shelf,
