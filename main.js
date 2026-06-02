@@ -15,6 +15,8 @@ const statusMission = document.querySelector("#status-mission");
 const statusCreation = document.querySelector("#status-creation");
 const cardShelf = document.querySelector("#card-shelf");
 const creationShelf = document.querySelector("#creation-shelf");
+const historyShelf = document.querySelector("#history-shelf");
+const checkinCount = document.querySelector("#checkin-count");
 const guideCopy = document.querySelector("#guide-copy");
 const missionWorld = document.querySelector("#mission-world");
 const missionTitle = document.querySelector("#mission-title");
@@ -177,6 +179,8 @@ const copy = {
     saveToCollection: "Save to collection",
     myCollection: "My Collection",
     collectionTitle: "Your cabinet of seeing",
+    seeingDiary: "Seeing Diary",
+    checkinHistory: "Past museum days",
     exploreAnother: "Explore another world",
     navMap: "Map",
     navStudio: "Studio",
@@ -195,6 +199,9 @@ const copy = {
     collectionComplete: "You unlocked three colors and saved your first collage.",
     collectionMissionDone: "Your colors are unlocked. Finish the collage to save it.",
     collectionLocked: "Finish the mission to unlock your first color set.",
+    checkinSaved: "Today is recorded in your seeing diary.",
+    checkinDays: (count) => `${count} day${count === 1 ? "" : "s"}`,
+    emptyHistory: "Finish today's artwork to start your image history.",
     collageSuffix: "collage",
     languageButton: "简",
     pieceLabels: { sun: "Sun", wave: "Wave", sail: "Sail", cloud: "Cloud" }
@@ -230,6 +237,8 @@ const copy = {
     saveToCollection: "保存到收藏",
     myCollection: "我的收藏",
     collectionTitle: "我的看见柜",
+    seeingDiary: "看见日记",
+    checkinHistory: "过去几天的博物馆",
     exploreAnother: "探索另一个世界",
     navMap: "地图",
     navStudio: "创作",
@@ -248,6 +257,9 @@ const copy = {
     collectionComplete: "你解锁了三个颜色，并保存了第一张拼贴。",
     collectionMissionDone: "颜色已经解锁。完成拼贴后就能保存。",
     collectionLocked: "完成任务，解锁你的第一组颜色。",
+    checkinSaved: "今天已经记录进你的看见日记。",
+    checkinDays: (count) => `${count} 天`,
+    emptyHistory: "完成今天的作品，就会开始留下图片历史。",
     collageSuffix: "拼贴",
     languageButton: "FR",
     pieceLabels: { sun: "太阳", wave: "波浪", sail: "帆船", cloud: "云朵" }
@@ -283,6 +295,8 @@ const copy = {
     saveToCollection: "Ajouter a la collection",
     myCollection: "Ma collection",
     collectionTitle: "Mon cabinet du regard",
+    seeingDiary: "Journal du regard",
+    checkinHistory: "Jours de musée passés",
     exploreAnother: "Explorer un autre monde",
     navMap: "Carte",
     navStudio: "Atelier",
@@ -301,6 +315,9 @@ const copy = {
     collectionComplete: "Tu as débloqué trois couleurs et sauvegardé ton premier collage.",
     collectionMissionDone: "Tes couleurs sont débloquées. Termine le collage pour le sauvegarder.",
     collectionLocked: "Termine la mission pour débloquer ta première palette.",
+    checkinSaved: "Aujourd'hui est noté dans ton journal du regard.",
+    checkinDays: (count) => `${count} jour${count === 1 ? "" : "s"}`,
+    emptyHistory: "Termine l'oeuvre du jour pour commencer ton historique d'images.",
     collageSuffix: "collage",
     languageButton: "EN",
     pieceLabels: { sun: "Soleil", wave: "Vague", sail: "Voile", cloud: "Nuage" }
@@ -312,7 +329,8 @@ const state = {
   missionKey: "color",
   locale: "en",
   selectedColors: [],
-  placedPieces: []
+  placedPieces: [],
+  checkins: loadCheckins()
 };
 
 function render() {
@@ -462,7 +480,7 @@ function renderCollection(missionDone, creationDone) {
       <p>${textFor(mission.world)} ${t.collageSuffix}</p>
     `;
     creationShelf.appendChild(creation);
-    collectionFeedback.textContent = t.collectionComplete;
+    collectionFeedback.textContent = hasTodayCheckin() ? t.checkinSaved : t.collectionComplete;
   } else {
     creationShelf.innerHTML = `
       <article class="saved-creation empty">
@@ -471,6 +489,90 @@ function renderCollection(missionDone, creationDone) {
     `;
     collectionFeedback.textContent = missionDone ? t.collectionMissionDone : t.collectionLocked;
   }
+
+  renderHistory(t);
+}
+
+function renderHistory(t) {
+  historyShelf.innerHTML = "";
+  checkinCount.textContent = t.checkinDays(state.checkins.length);
+
+  if (!state.checkins.length) {
+    historyShelf.innerHTML = `
+      <article class="history-empty">
+        <p>${t.emptyHistory}</p>
+      </article>
+    `;
+    return;
+  }
+
+  for (const checkin of state.checkins.slice(0, 7)) {
+    const card = document.createElement("article");
+    const image = document.createElement("img");
+    const body = document.createElement("div");
+    const date = document.createElement("strong");
+    const title = document.createElement("p");
+
+    card.className = "history-card";
+    image.src = checkin.imageUrl;
+    image.alt = checkin.title;
+    date.textContent = formatCheckinDate(checkin.date);
+    title.textContent = checkin.title;
+
+    body.append(date, title);
+    card.append(image, body);
+    historyShelf.appendChild(card);
+  }
+}
+
+function recordTodayCheckin() {
+  const mission = missions[state.missionKey];
+  const date = todayKey();
+  const nextCheckin = {
+    date,
+    missionKey: state.missionKey,
+    title: artworkName(mission.artwork),
+    imageUrl: mission.artwork.url,
+    colors: state.selectedColors
+  };
+
+  state.checkins = [
+    nextCheckin,
+    ...state.checkins.filter((checkin) => checkin.date !== date)
+  ].slice(0, 30);
+  saveCheckins();
+}
+
+function hasTodayCheckin() {
+  return state.checkins.some((checkin) => checkin.date === todayKey());
+}
+
+function loadCheckins() {
+  try {
+    const checkins = JSON.parse(localStorage.getItem("museumSeeingCheckins") || "[]");
+    return Array.isArray(checkins) ? checkins : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveCheckins() {
+  localStorage.setItem("museumSeeingCheckins", JSON.stringify(state.checkins));
+}
+
+function formatCheckinDate(date) {
+  return new Intl.DateTimeFormat(state.locale === "zh" ? "zh-CN" : state.locale, {
+    month: "short",
+    day: "numeric"
+  }).format(new Date(`${date}T12:00:00`));
+}
+
+function todayKey() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const date = String(today.getDate()).padStart(2, "0");
+  return `${year}-${month}-${date}`;
 }
 
 for (const button of screenButtons) {
@@ -481,6 +583,9 @@ for (const button of screenButtons) {
       state.missionKey = button.dataset.world;
       state.selectedColors = [];
       state.placedPieces = [];
+    }
+    if (button.id === "finish-creation" && state.placedPieces.length >= 3) {
+      recordTodayCheckin();
     }
     state.activeScreen = target;
     render();

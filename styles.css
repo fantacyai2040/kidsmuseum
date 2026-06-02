@@ -228,6 +228,7 @@ button {
 .piece-tray,
 .card-shelf,
 .creation-shelf,
+.history-panel,
 .mission-footer,
 .creature-card {
   border-radius: 28px;
@@ -338,6 +339,7 @@ button {
 .mission-footer,
 .card-shelf,
 .creation-shelf,
+.history-panel,
 .creature-card {
   padding: 16px;
 }
@@ -540,6 +542,81 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+}
+
+.history-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.history-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.history-header h3 {
+  margin: 2px 0 0;
+  font-family: var(--display-font);
+  color: #fff7e2;
+}
+
+.history-header span {
+  flex: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 212, 107, 0.2);
+  color: #ffe3a2;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.history-shelf {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(142px, 46%);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.history-card,
+.history-empty {
+  min-height: 172px;
+  border-radius: 20px;
+  border: 1px solid rgba(241, 223, 191, 0.2);
+  background: rgba(241, 223, 191, 0.08);
+  overflow: hidden;
+}
+
+.history-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #14323f;
+}
+
+.history-card div,
+.history-empty {
+  padding: 12px;
+}
+
+.history-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #ffe3a2;
+  font-size: 0.82rem;
+}
+
+.history-card p,
+.history-empty p {
+  margin: 0;
+  color: rgba(255, 248, 232, 0.82);
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .collect-card,
