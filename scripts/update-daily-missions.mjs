@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
 const TERMS = [
   "flowers",
@@ -47,42 +47,91 @@ const PALETTES = [
   ]
 ];
 
-const today = new Date().toISOString().slice(0, 10);
-const term = TERMS[dayIndex(TERMS.length)];
+const today = process.env.DAILY_MISSION_DATE || new Date().toISOString().slice(0, 10);
+const dailyMission = await buildDailyMission();
 
-const searchUrl = new URL("https://collectionapi.metmuseum.org/public/collection/v1/search");
-searchUrl.searchParams.set("hasImages", "true");
-searchUrl.searchParams.set("isPublicDomain", "true");
-searchUrl.searchParams.set("q", term);
+await writeFile("daily-missions.json", `${JSON.stringify(dailyMission, null, 2)}\n`);
 
-const search = await fetchJson(searchUrl);
-const objectIDs = Array.isArray(search.objectIDs) ? search.objectIDs.slice(0, 40) : [];
-const candidates = [];
+async function buildDailyMission() {
+  const result = await findDailyCandidates();
 
-for (const objectID of objectIDs) {
-  const object = await fetchJson(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`);
-  if (isUsableObject(object)) candidates.push(object);
-  if (candidates.length >= 8) break;
-}
-
-if (!candidates.length) {
-  throw new Error(`No usable Met objects found for term "${term}"`);
-}
-
-const object = candidates[dayIndex(candidates.length)];
-const palette = PALETTES[dayIndex(PALETTES.length)];
-
-const dailyMissions = {
-  updatedAt: new Date().toISOString(),
-  source: "The Metropolitan Museum of Art Collection API",
-  query: term,
-  reviewStatus: "auto-generated candidate",
-  missions: {
-    color: buildColorMission(object, palette)
+  if (!result) {
+    return previousDailyMission();
   }
-};
 
-await writeFile("daily-missions.json", `${JSON.stringify(dailyMissions, null, 2)}\n`);
+  const { term, candidates } = result;
+  const object = candidates[dayIndex(candidates.length)];
+  const palette = PALETTES[dayIndex(PALETTES.length)];
+
+  return {
+    updatedAt: new Date().toISOString(),
+    source: "The Metropolitan Museum of Art Collection API",
+    query: term,
+    reviewStatus: "auto-generated candidate",
+    missions: {
+      color: buildColorMission(object, palette)
+    }
+  };
+}
+
+async function findDailyCandidates() {
+  const startIndex = dayIndex(TERMS.length);
+  const termsToTry = [
+    ...TERMS.slice(startIndex),
+    ...TERMS.slice(0, startIndex)
+  ];
+
+  for (const searchTerm of termsToTry) {
+    const candidates = await candidatesForTerm(searchTerm);
+    if (candidates.length) return { term: searchTerm, candidates };
+  }
+
+  console.warn(`No usable Met objects found for any term: ${TERMS.join(", ")}`);
+  return null;
+}
+
+async function candidatesForTerm(searchTerm) {
+  const searchUrl = new URL("https://collectionapi.metmuseum.org/public/collection/v1/search");
+  searchUrl.searchParams.set("hasImages", "true");
+  searchUrl.searchParams.set("isPublicDomain", "true");
+  searchUrl.searchParams.set("q", searchTerm);
+
+  let search;
+  try {
+    search = await fetchJson(searchUrl);
+  } catch (error) {
+    console.warn(`Skipping Met search term "${searchTerm}": ${error.message}`);
+    return [];
+  }
+
+  const objectIDs = Array.isArray(search.objectIDs) ? search.objectIDs.slice(0, 50) : [];
+  const candidates = [];
+
+  for (const objectID of objectIDs) {
+    try {
+      const object = await fetchJson(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`);
+      if (isUsableObject(object)) candidates.push(object);
+    } catch (error) {
+      console.warn(`Skipping Met object ${objectID}: ${error.message}`);
+    }
+    if (candidates.length >= 8) break;
+  }
+
+  return candidates;
+}
+
+async function previousDailyMission() {
+  try {
+    const previous = JSON.parse(await readFile("daily-missions.json", "utf8"));
+    return {
+      ...previous,
+      updatedAt: new Date().toISOString(),
+      reviewStatus: "fallback previous daily mission"
+    };
+  } catch {
+    throw new Error("No usable Met objects found and no previous daily-missions.json fallback is available");
+  }
+}
 
 function buildColorMission(object, palette) {
   const artist = object.artistDisplayName || "Unknown artist";
