@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-05T08:41:25.130Z",
+  "updatedAt": "2026-06-05T08:44:10.688Z",
   "source": "The Metropolitan Museum of Art Collection API",
   "query": "birds",
   "reviewStatus": "auto-generated candidate",
@@ -49,35 +49,35 @@
       "choices": [
         [
           {
-            "en": "Flower Pink",
-            "zh": "花朵粉",
-            "fr": "Rose fleur"
+            "en": "Sun Gold",
+            "zh": "阳光金",
+            "fr": "Or soleil"
           },
-          "#dd8a80"
+          "#e4b34f"
         ],
         [
           {
-            "en": "Deep Blue",
-            "zh": "深蓝色",
-            "fr": "Bleu profond"
+            "en": "River Blue",
+            "zh": "河水蓝",
+            "fr": "Bleu rivière"
           },
-          "#25537b"
+          "#5c93b8"
         ],
         [
           {
-            "en": "Warm Brown",
-            "zh": "暖棕色",
-            "fr": "Brun chaud"
+            "en": "Leaf Green",
+            "zh": "叶片绿",
+            "fr": "Vert feuille"
           },
-          "#8b5d35"
+          "#40624f"
         ],
         [
           {
-            "en": "Quiet Gray",
-            "zh": "安静灰",
-            "fr": "Gris calme"
+            "en": "Soft Cloud",
+            "zh": "柔云白",
+            "fr": "Nuage doux"
           },
-          "#9aa3a0"
+          "#f1dfbf"
         ]
       ]
     }
