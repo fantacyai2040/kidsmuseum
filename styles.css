@@ -230,6 +230,7 @@ button {
 .card-shelf,
 .creation-shelf,
 .history-panel,
+.parents-panel article,
 .mission-footer,
 .creature-card {
   border-radius: 28px;
@@ -481,7 +482,8 @@ button {
   overflow: hidden;
   border-radius: 22px;
   background:
-    linear-gradient(180deg, #f2c89b 0%, #d98068 38%, #2f5a75 100%);
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--creation-1, #f2c89b), white 18%) 0 13%, transparent 14%),
+    linear-gradient(180deg, var(--creation-1, #f2c89b) 0%, var(--creation-2, #d98068) 42%, var(--creation-3, #2f5a75) 100%);
 }
 
 .canvas-piece {
@@ -498,7 +500,7 @@ button {
   right: 34px;
   top: 28px;
   border-radius: 50%;
-  background: var(--sun);
+  background: var(--piece-color, var(--sun));
 }
 
 .canvas-piece.wave {
@@ -507,7 +509,7 @@ button {
   left: 12px;
   bottom: 18px;
   border-radius: 52% 48% 18% 22%;
-  background: var(--blue);
+  background: var(--piece-color, var(--blue));
 }
 
 .canvas-piece.sail {
@@ -516,7 +518,7 @@ button {
   right: 74px;
   bottom: 34px;
   clip-path: polygon(50% 0, 60% 76%, 88% 100%, 18% 100%, 52% 74%);
-  background: var(--paper);
+  background: var(--piece-color, var(--paper));
 }
 
 .canvas-piece.cloud {
@@ -525,7 +527,34 @@ button {
   left: 20px;
   top: 26px;
   border-radius: 999px;
-  background: rgba(245, 235, 213, 0.86);
+  background: color-mix(in srgb, var(--piece-color, var(--paper)), white 36%);
+}
+
+.canvas-piece.dot {
+  width: 74px;
+  height: 74px;
+  left: 42%;
+  top: 42%;
+  border-radius: 50%;
+  background: var(--piece-color, var(--gold));
+  box-shadow: 0 0 0 12px color-mix(in srgb, var(--piece-color, var(--gold)), transparent 72%);
+}
+
+.canvas-piece.arch {
+  width: 118px;
+  height: 104px;
+  right: 18px;
+  bottom: 18px;
+  border-radius: 60px 60px 18px 18px;
+  background: var(--piece-color, var(--moss));
+}
+
+.canvas-piece.arch::after {
+  position: absolute;
+  content: "";
+  inset: 28px 28px 0;
+  border-radius: 38px 38px 10px 10px;
+  background: rgba(9, 38, 52, 0.42);
 }
 
 .piece-tray {
@@ -544,6 +573,12 @@ button {
 }
 
 .piece.used {
+  border-color: rgba(255, 212, 107, 0.56);
+  background: rgba(255, 212, 107, 0.18);
+}
+
+.piece:disabled {
+  cursor: not-allowed;
   opacity: 0.45;
 }
 
@@ -770,8 +805,8 @@ button {
   min-height: 92px;
   border-radius: 18px;
   background:
-    radial-gradient(circle at 72% 22%, var(--sun) 0 12%, transparent 13%),
-    linear-gradient(180deg, #f3c18c 0%, #d98d6d 40%, #2e5772 100%);
+    radial-gradient(circle at 72% 22%, var(--creation-1, var(--sun)) 0 12%, transparent 13%),
+    linear-gradient(180deg, var(--creation-1, #f3c18c) 0%, var(--creation-2, #d98d6d) 40%, var(--creation-3, #2e5772) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -784,7 +819,7 @@ button {
   left: 14px;
   bottom: 12px;
   border-radius: 52% 48% 18% 22%;
-  background: var(--blue);
+  background: var(--creation-3, var(--blue));
 }
 
 .saved-creation-preview::after {
@@ -795,7 +830,27 @@ button {
   right: 22px;
   bottom: 12px;
   clip-path: polygon(50% 0, 60% 76%, 88% 100%, 18% 100%, 52% 74%);
-  background: var(--paper);
+  background: color-mix(in srgb, var(--creation-2, var(--paper)), white 28%);
+}
+
+.parents-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.parents-panel article {
+  padding: 16px;
+}
+
+.parents-panel h3 {
+  margin: 0 0 8px;
+  color: #fff7e2;
+}
+
+.parents-panel p {
+  margin: 0;
+  color: rgba(255, 248, 232, 0.82);
+  line-height: 1.5;
 }
 
 .bottom-nav {

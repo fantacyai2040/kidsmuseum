@@ -37,6 +37,7 @@ const staticTextNodes = [...document.querySelectorAll("[data-i18n]")];
 const worldLabelNodes = [...document.querySelectorAll("[data-world-label]")];
 const collectionTitle = document.querySelector(".collection-header h2");
 const overviewTitle = document.querySelector("#overview-title");
+const MAX_STUDIO_PIECES = 5;
 
 let missions = {
   color: {
@@ -195,6 +196,14 @@ const copy = {
     navStudio: "Studio",
     navCollection: "Collection",
     navParents: "Parents",
+    parentsGuide: "Parents Guide",
+    parentsTitle: "A tiny daily museum habit.",
+    parentsLearningTitle: "What children practice",
+    parentsLearningBody: "Looking slowly, naming colors, noticing mood, and turning observation into creation.",
+    parentsPrivacyTitle: "Privacy",
+    parentsPrivacyBody: "No account is required. The seeing diary is stored only in this browser.",
+    parentsSourcesTitle: "Museum sources",
+    parentsSourcesBody: "Daily artworks come from public museum collections and include source credits.",
     chooseMore: (count) => `Choose ${count} more color${count === 1 ? "" : "s"} to open the studio.`,
     paletteFound: "Beautiful. You found a palette from the artwork.",
     piecesMore: (count) => `Place ${count} more piece${count === 1 ? "" : "s"} to finish your artwork.`,
@@ -214,7 +223,7 @@ const copy = {
     emptyHistory: "Finish today's artwork to start your image history.",
     collageSuffix: "collage",
     languageButton: "简",
-    pieceLabels: { sun: "Sun", wave: "Wave", sail: "Sail", cloud: "Cloud" }
+    pieceLabels: { sun: "Sun", wave: "Wave", sail: "Sail", cloud: "Cloud", dot: "Dot", arch: "Arch" }
   },
   zh: {
     appName: "看见博物馆",
@@ -258,6 +267,14 @@ const copy = {
     navStudio: "创作",
     navCollection: "收藏",
     navParents: "家长",
+    parentsGuide: "家长指南",
+    parentsTitle: "一个小小的每日博物馆习惯。",
+    parentsLearningTitle: "孩子在练习什么",
+    parentsLearningBody: "慢慢看、说出颜色、感受情绪，再把观察变成自己的创作。",
+    parentsPrivacyTitle: "隐私",
+    parentsPrivacyBody: "不需要账号。看见日记只保存在这个浏览器里。",
+    parentsSourcesTitle: "博物馆素材来源",
+    parentsSourcesBody: "每日作品来自开放博物馆收藏，并保留来源说明。",
     chooseMore: (count) => `再选 ${count} 个颜色，就能进入工作室。`,
     paletteFound: "很好看。你从作品里找到了自己的配色。",
     piecesMore: (count) => `再放 ${count} 个拼贴元素，就能完成作品。`,
@@ -277,7 +294,7 @@ const copy = {
     emptyHistory: "完成今天的作品，就会开始留下图片历史。",
     collageSuffix: "拼贴",
     languageButton: "FR",
-    pieceLabels: { sun: "太阳", wave: "波浪", sail: "帆船", cloud: "云朵" }
+    pieceLabels: { sun: "太阳", wave: "波浪", sail: "帆船", cloud: "云朵", dot: "圆点", arch: "拱门" }
   },
   fr: {
     appName: "Musée du regard",
@@ -321,6 +338,14 @@ const copy = {
     navStudio: "Atelier",
     navCollection: "Collection",
     navParents: "Parents",
+    parentsGuide: "Guide parents",
+    parentsTitle: "Une petite habitude de musée.",
+    parentsLearningTitle: "Ce que les enfants pratiquent",
+    parentsLearningBody: "Regarder lentement, nommer les couleurs, sentir l'ambiance, puis transformer l'observation en création.",
+    parentsPrivacyTitle: "Confidentialité",
+    parentsPrivacyBody: "Aucun compte n'est nécessaire. Le journal du regard reste dans ce navigateur.",
+    parentsSourcesTitle: "Sources des musées",
+    parentsSourcesBody: "Les oeuvres du jour viennent de collections publiques de musées et gardent leurs crédits.",
     chooseMore: (count) => `Choisis encore ${count} couleur${count === 1 ? "" : "s"} pour ouvrir l'atelier.`,
     paletteFound: "Très beau. Tu as trouvé une palette dans l'oeuvre.",
     piecesMore: (count) => `Place encore ${count} élément${count === 1 ? "" : "s"} pour terminer ton image.`,
@@ -340,7 +365,7 @@ const copy = {
     emptyHistory: "Termine l'oeuvre du jour pour commencer ton historique d'images.",
     collageSuffix: "collage",
     languageButton: "EN",
-    pieceLabels: { sun: "Soleil", wave: "Vague", sail: "Voile", cloud: "Nuage" }
+    pieceLabels: { sun: "Soleil", wave: "Vague", sail: "Voile", cloud: "Nuage", dot: "Point", arch: "Arche" }
   }
 };
 
@@ -381,19 +406,23 @@ function render() {
     swatch.title = colorName;
     paletteRow.appendChild(swatch);
   }
+  applySelectedPalette(canvasScene);
 
   canvasScene.innerHTML = "";
-  for (const piece of state.placedPieces) {
+  state.placedPieces.forEach((placement, index) => {
+    const piece = pieceName(placement);
+    const colorName = pieceColorName(placement, index);
     const node = document.createElement("div");
     node.className = `canvas-piece ${piece}`;
+    node.style.setProperty("--piece-color", colorForChoice(colorName));
     node.textContent = "";
     canvasScene.appendChild(node);
-  }
+  });
 
   for (const button of pieceButtons) {
     button.textContent = t.pieceLabels[button.dataset.piece];
-    button.classList.toggle("used", state.placedPieces.includes(button.dataset.piece));
-    button.disabled = state.placedPieces.includes(button.dataset.piece);
+    button.classList.toggle("used", state.placedPieces.some((placement) => pieceName(placement) === button.dataset.piece));
+    button.disabled = state.selectedColors.length === 0 || state.placedPieces.length >= MAX_STUDIO_PIECES;
   }
 
   enterStudioButton.disabled = state.selectedColors.length !== 3;
@@ -457,6 +486,22 @@ function colorForChoice(colorName) {
   return mission.choices.find(([name]) => textFor(name) === colorName)?.[1] ?? "#e4b34f";
 }
 
+function applySelectedPalette(node) {
+  const colors = state.selectedColors.map((colorName) => colorForChoice(colorName));
+  node.style.setProperty("--creation-1", colors[0] ?? "#f2c89b");
+  node.style.setProperty("--creation-2", colors[1] ?? "#d98068");
+  node.style.setProperty("--creation-3", colors[2] ?? "#2f5a75");
+}
+
+function pieceName(placement) {
+  return typeof placement === "string" ? placement : placement.piece;
+}
+
+function pieceColorName(placement, index) {
+  if (typeof placement === "object" && placement.colorName) return placement.colorName;
+  return state.selectedColors[index % state.selectedColors.length];
+}
+
 function textFor(value) {
   if (typeof value === "string") return value;
   return value[state.locale] ?? value.en;
@@ -496,6 +541,7 @@ function renderCollection(missionDone, creationDone) {
   if (creationDone) {
     const creation = document.createElement("article");
     creation.className = "saved-creation";
+    applySelectedPalette(creation);
     creation.innerHTML = `
       <div class="saved-creation-preview"></div>
       <p>${textFor(mission.world)} ${t.collageSuffix}</p>
@@ -618,7 +664,6 @@ function todayKey() {
 for (const button of screenButtons) {
   button.addEventListener("click", () => {
     const target = button.dataset.targetScreen;
-    if (target === "parents") return;
     if (button.dataset.world) {
       state.missionKey = button.dataset.world;
       state.selectedColors = [];
@@ -650,8 +695,9 @@ for (const button of choiceButtons) {
 for (const button of pieceButtons) {
   button.addEventListener("click", () => {
     const { piece } = button.dataset;
-    if (state.placedPieces.includes(piece)) return;
-    state.placedPieces = [...state.placedPieces, piece];
+    if (state.placedPieces.length >= MAX_STUDIO_PIECES) return;
+    const colorName = state.selectedColors[state.placedPieces.length % state.selectedColors.length];
+    state.placedPieces = [...state.placedPieces, { piece, colorName }];
     render();
   });
 }
