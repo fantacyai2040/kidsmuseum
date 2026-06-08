@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-07T10:36:58.767Z",
+  "updatedAt": "2026-06-08T12:42:41.663Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "moon",
+  "query": "water",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at Full Moon. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《Full Moon》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe Full Moon. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at Water. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《Water》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe Water. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,46 +36,46 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "Full Moon",
-        "titleZh": "Full Moon",
-        "titleFr": "Full Moon",
+        "title": "Water",
+        "titleZh": "Water",
+        "titleFr": "Water",
         "credit": {
-          "en": "Claude Mellan, 1635. The Metropolitan Museum of Art, public domain.",
-          "zh": "Claude Mellan，1635。大都会艺术博物馆，公有领域。",
-          "fr": "Claude Mellan, 1635. The Metropolitan Museum of Art, domaine public."
+          "en": "Claude Augustin Duflos le Jeune, 18th century. The Metropolitan Museum of Art, public domain.",
+          "zh": "Claude Augustin Duflos le Jeune，18th century。大都会艺术博物馆，公有领域。",
+          "fr": "Claude Augustin Duflos le Jeune, 18th century. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP822421.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP826215.jpg"
       },
       "choices": [
         [
           {
-            "en": "Moss Green",
-            "zh": "苔藓绿",
-            "fr": "Vert mousse"
+            "en": "Sun Gold",
+            "zh": "阳光金",
+            "fr": "Or soleil"
           },
-          "#40624f"
+          "#e4b34f"
         ],
         [
           {
-            "en": "Morning Blue",
-            "zh": "清晨蓝",
-            "fr": "Bleu matin"
+            "en": "River Blue",
+            "zh": "河水蓝",
+            "fr": "Bleu rivière"
           },
           "#5c93b8"
         ],
         [
           {
-            "en": "Petal Pink",
-            "zh": "花瓣粉",
-            "fr": "Rose pétale"
+            "en": "Leaf Green",
+            "zh": "叶片绿",
+            "fr": "Vert feuille"
           },
-          "#dd8a80"
+          "#40624f"
         ],
         [
           {
-            "en": "Light Cream",
-            "zh": "浅奶油",
-            "fr": "Crème claire"
+            "en": "Soft Cloud",
+            "zh": "柔云白",
+            "fr": "Nuage doux"
           },
           "#f1dfbf"
         ]
