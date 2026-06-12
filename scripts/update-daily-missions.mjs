@@ -13,6 +13,9 @@ const TERMS = [
   "sun"
 ];
 
+const MAX_OBJECTS_PER_TERM = 25;
+const MAX_FAILED_OBJECTS_PER_TERM = 12;
+
 const BLOCKED_TITLE_WORDS = [
   "death",
   "battle",
@@ -48,49 +51,102 @@ const PALETTES = [
 ];
 
 const today = process.env.DAILY_MISSION_DATE || new Date().toISOString().slice(0, 10);
-const dailyMission = await buildDailyMission();
+const libraryDays = Number(process.env.MUSEUM_LIBRARY_DAYS || 10);
+const candidatesByTerm = new Map();
+const library = await buildMuseumLibrary(libraryDays);
+const dailyMission = missionForDate(library, today) || await previousDailyMission();
 
 await writeFile("daily-missions.json", `${JSON.stringify(dailyMission, null, 2)}\n`);
+await writeFile("museum-library.json", `${JSON.stringify(library, null, 2)}\n`);
 
-async function buildDailyMission() {
-  const result = await findDailyCandidates();
+async function buildMuseumLibrary(days) {
+  const entries = [];
+  const usedTitles = new Set();
 
-  if (!result) {
-    return previousDailyMission();
+  for (let offset = 0; offset < days; offset += 1) {
+    const date = dateOffset(today, offset);
+    const result = await findDailyCandidate(date, usedTitles);
+    if (!result) continue;
+
+    const { term, object } = result;
+    usedTitles.add(object.title.toLowerCase());
+    const palette = PALETTES[dayIndex(PALETTES.length, date)];
+
+    entries.push({
+      date,
+      query: term,
+      mission: buildColorMission(object, palette)
+    });
   }
 
-  const { term, candidates } = result;
-  const object = candidates[dayIndex(candidates.length)];
-  const palette = PALETTES[dayIndex(PALETTES.length)];
+  if (!entries.length) {
+    return previousMuseumLibrary();
+  }
 
   return {
     updatedAt: new Date().toISOString(),
     source: "The Metropolitan Museum of Art Collection API",
-    query: term,
     reviewStatus: "auto-generated candidate",
+    days: entries
+  };
+}
+
+function selectCandidate(candidates, date, usedTitles, allowDuplicate = false) {
+  const startIndex = dayIndex(candidates.length, date);
+
+  for (let offset = 0; offset < candidates.length; offset += 1) {
+    const candidate = candidates[(startIndex + offset) % candidates.length];
+    if (allowDuplicate || !usedTitles.has(candidate.title.toLowerCase())) return candidate;
+  }
+
+  return null;
+}
+
+function missionForDate(library, date) {
+  const entry = library.days.find((day) => day.date === date) || library.days[0];
+  if (!entry) return null;
+
+  return {
+    updatedAt: library.updatedAt,
+    source: library.source,
+    query: entry.query,
+    reviewStatus: library.reviewStatus,
     missions: {
-      color: buildColorMission(object, palette)
+      color: entry.mission
     }
   };
 }
 
-async function findDailyCandidates() {
-  const startIndex = dayIndex(TERMS.length);
+async function findDailyCandidate(date = today, usedTitles = new Set()) {
+  const startIndex = dayIndex(TERMS.length, date);
   const termsToTry = [
     ...TERMS.slice(startIndex),
     ...TERMS.slice(0, startIndex)
   ];
+  let duplicateFallback = null;
 
   for (const searchTerm of termsToTry) {
     const candidates = await candidatesForTerm(searchTerm);
-    if (candidates.length) return { term: searchTerm, candidates };
+    if (!candidates.length) continue;
+
+    const uniqueObject = selectCandidate(candidates, date, usedTitles);
+    if (uniqueObject) return { term: searchTerm, object: uniqueObject };
+
+    duplicateFallback ||= {
+      term: searchTerm,
+      object: selectCandidate(candidates, date, usedTitles, true)
+    };
   }
 
-  console.warn(`No usable Met objects found for any term: ${TERMS.join(", ")}`);
+  if (duplicateFallback) return duplicateFallback;
+
+  console.warn(`No usable Met objects found for ${date} from any term: ${TERMS.join(", ")}`);
   return null;
 }
 
 async function candidatesForTerm(searchTerm) {
+  if (candidatesByTerm.has(searchTerm)) return candidatesByTerm.get(searchTerm);
+
   const searchUrl = new URL("https://collectionapi.metmuseum.org/public/collection/v1/search");
   searchUrl.searchParams.set("hasImages", "true");
   searchUrl.searchParams.set("isPublicDomain", "true");
@@ -101,22 +157,30 @@ async function candidatesForTerm(searchTerm) {
     search = await fetchJson(searchUrl);
   } catch (error) {
     console.warn(`Skipping Met search term "${searchTerm}": ${error.message}`);
+    candidatesByTerm.set(searchTerm, []);
     return [];
   }
 
-  const objectIDs = Array.isArray(search.objectIDs) ? search.objectIDs.slice(0, 50) : [];
+  const objectIDs = Array.isArray(search.objectIDs) ? search.objectIDs.slice(0, MAX_OBJECTS_PER_TERM) : [];
   const candidates = [];
+  let failedObjects = 0;
 
   for (const objectID of objectIDs) {
     try {
       const object = await fetchJson(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`);
       if (isUsableObject(object)) candidates.push(object);
     } catch (error) {
+      failedObjects += 1;
       console.warn(`Skipping Met object ${objectID}: ${error.message}`);
+      if (failedObjects >= MAX_FAILED_OBJECTS_PER_TERM) {
+        console.warn(`Skipping Met search term "${searchTerm}" after ${failedObjects} object fetch failures`);
+        break;
+      }
     }
     if (candidates.length >= 8) break;
   }
 
+  candidatesByTerm.set(searchTerm, candidates);
   return candidates;
 }
 
@@ -130,6 +194,31 @@ async function previousDailyMission() {
     };
   } catch {
     throw new Error("No usable Met objects found and no previous daily-missions.json fallback is available");
+  }
+}
+
+async function previousMuseumLibrary() {
+  try {
+    const previous = JSON.parse(await readFile("museum-library.json", "utf8"));
+    return {
+      ...previous,
+      updatedAt: new Date().toISOString(),
+      reviewStatus: "fallback previous museum library"
+    };
+  } catch {
+    const previousDaily = await previousDailyMission();
+    return {
+      updatedAt: previousDaily.updatedAt,
+      source: previousDaily.source,
+      reviewStatus: "fallback previous daily mission",
+      days: [
+        {
+          date: today,
+          query: previousDaily.query,
+          mission: previousDaily.missions.color
+        }
+      ]
+    };
   }
 }
 
@@ -198,9 +287,15 @@ function isUsableObject(object) {
   return true;
 }
 
-function dayIndex(length) {
-  const dayNumber = Number(today.replaceAll("-", ""));
+function dayIndex(length, date = today) {
+  const dayNumber = Number(date.replaceAll("-", ""));
   return dayNumber % length;
+}
+
+function dateOffset(date, offset) {
+  const value = new Date(`${date}T12:00:00Z`);
+  value.setUTCDate(value.getUTCDate() + offset);
+  return value.toISOString().slice(0, 10);
 }
 
 async function fetchJson(url) {

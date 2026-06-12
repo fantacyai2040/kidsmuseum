@@ -720,6 +720,23 @@ async function loadDailyMissions() {
   if (window.location.protocol === "file:") return;
 
   try {
+    const libraryResponse = await fetch(`./museum-library.json?updated=${Date.now()}`, {
+      cache: "no-store"
+    });
+
+    if (libraryResponse.ok) {
+      const library = await libraryResponse.json();
+      const todayEntry = library?.days?.find((entry) => entry.date === todayKey()) || library?.days?.[0];
+
+      if (todayEntry?.mission) {
+        missions = {
+          ...missions,
+          color: todayEntry.mission
+        };
+        return;
+      }
+    }
+
     const response = await fetch(`./daily-missions.json?updated=${Date.now()}`, {
       cache: "no-store"
     });
