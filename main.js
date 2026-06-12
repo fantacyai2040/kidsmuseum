@@ -717,6 +717,8 @@ async function initialize() {
 }
 
 async function loadDailyMissions() {
+  if (window.location.protocol === "file:") return;
+
   try {
     const response = await fetch(`./daily-missions.json?updated=${Date.now()}`, {
       cache: "no-store"
