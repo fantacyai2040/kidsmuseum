@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Museum of Seeing</title>
+  <desc id="desc">A warm museum face above a blue river shape.</desc>
+  <rect width="512" height="512" rx="112" fill="#092634"/>
+  <circle cx="256" cy="206" r="122" fill="#e4b34f"/>
+  <path d="M106 346c63-58 128-64 194-18 48 34 88 37 146 4v96H106z" fill="#5c93b8"/>
+  <circle cx="196" cy="195" r="24" fill="#092634"/>
+  <circle cx="316" cy="195" r="24" fill="#092634"/>
+  <path d="M196 274c40 35 100 35 140 0" fill="none" stroke="#092634" stroke-width="24" stroke-linecap="round"/>
+</svg>

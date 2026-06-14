@@ -37,7 +37,10 @@ const staticTextNodes = [...document.querySelectorAll("[data-i18n]")];
 const worldLabelNodes = [...document.querySelectorAll("[data-world-label]")];
 const collectionTitle = document.querySelector(".collection-header h2");
 const overviewTitle = document.querySelector("#overview-title");
+const dailyProofCopy = document.querySelector("#daily-proof-copy");
 const MAX_STUDIO_PIECES = 5;
+const CHECKINS_STORAGE_KEY = "museumSeeingCheckins";
+const LOCALE_STORAGE_KEY = "museumSeeingLocale";
 
 let missions = {
   color: {
@@ -156,18 +159,18 @@ let missions = {
 const copy = {
   en: {
     appName: "Museum of Seeing",
-    prototype: "Prototype",
+    prototype: "Daily ritual",
     overviewLede:
-      "A children's aesthetic adventure app prototype for ages 7-9. This mockup tests one complete loop: explore a world, notice a work, make something, and collect the result.",
-    flowLabel: "Flow",
-    flowOne: "Choose a world from the map",
-    flowTwo: "Play the Daily Spark mission",
-    flowThree: "Create with colors and shapes",
-    flowFour: "Unlock a new collection card",
-    lookForLabel: "What To Look For",
-    lookForOne: "Does it feel playful instead of school-like?",
-    lookForTwo: "Does the mission naturally lead into creation?",
-    lookForThree: "Does the reward feel like identity, not points?",
+      "A 5-minute museum ritual for curious kids. Look closely, collect colors, make a tiny artwork, and build a seeing diary.",
+    flowLabel: "Today",
+    flowOne: "Look at one real museum artwork",
+    flowTwo: "Collect three colors you notice",
+    flowThree: "Make a small atelier collage",
+    flowFour: "Save the day to your seeing diary",
+    lookForLabel: "Why it matters",
+    lookForOne: "Looking slowly builds visual attention.",
+    lookForTwo: "Naming colors helps children form aesthetic language.",
+    lookForThree: "Making from observation turns seeing into memory.",
     sessionLabel: "Session",
     statusWorldLabel: "World",
     statusMissionLabel: "Mission",
@@ -179,6 +182,8 @@ const copy = {
     todaysGuide: "Today's Guide",
     newCreature: "New Creature",
     newCreatureCopy: "Complete one mission to wake the Lantern Sprout.",
+    dailyProof: "Your ritual",
+    dailyProofCopy: "Open one artwork, make one small thing, keep one memory.",
     enterStudio: "Create with these colors",
     creativeStudio: "Creative Studio",
     yourCanvas: "Your canvas",
@@ -204,6 +209,9 @@ const copy = {
     parentsPrivacyBody: "No account is required. The seeing diary is stored only in this browser.",
     parentsSourcesTitle: "Museum sources",
     parentsSourcesBody: "Daily artworks come from public museum collections and include source credits.",
+    parentsRitualTitle: "How to use it",
+    parentsRitualBody:
+      "Sit nearby, ask what your child notices, and avoid correcting their choices. The goal is attention, not right answers.",
     chooseMore: (count) => `Choose ${count} more color${count === 1 ? "" : "s"} to open the studio.`,
     paletteFound: "Beautiful. You found a palette from the artwork.",
     piecesMore: (count) => `Place ${count} more piece${count === 1 ? "" : "s"} to finish your artwork.`,
@@ -227,18 +235,18 @@ const copy = {
   },
   zh: {
     appName: "看见博物馆",
-    prototype: "原型",
+    prototype: "每日仪式",
     overviewLede:
-      "给 7-9 岁孩子的美感冒险 app 原型。这个版本测试一条完整体验：探索世界、观察作品、动手创作、收进收藏。",
-    flowLabel: "体验路径",
-    flowOne: "从地图选择一个世界",
-    flowTwo: "进入今日灵感任务",
-    flowThree: "用颜色和形状创作",
-    flowFour: "解锁新的收藏卡",
-    lookForLabel: "重点观察",
-    lookForOne: "它像游戏，而不是像上课吗？",
-    lookForTwo: "观察任务会自然走向创作吗？",
-    lookForThree: "奖励像身份成长，而不是单纯积分吗？",
+      "给好奇孩子的 5 分钟博物馆仪式：慢慢看，收集颜色，做一个小作品，留下看见日记。",
+    flowLabel: "今天",
+    flowOne: "看一件真实博物馆作品",
+    flowTwo: "收集你注意到的三个颜色",
+    flowThree: "做一个小小工作室拼贴",
+    flowFour: "把今天保存进看见日记",
+    lookForLabel: "为什么重要",
+    lookForOne: "慢慢看，会训练视觉注意力。",
+    lookForTwo: "说出颜色，会建立孩子的美感语言。",
+    lookForThree: "从观察去创作，会把看见变成记忆。",
     sessionLabel: "本次进度",
     statusWorldLabel: "世界",
     statusMissionLabel: "任务",
@@ -250,6 +258,8 @@ const copy = {
     todaysGuide: "今日导览",
     newCreature: "新伙伴",
     newCreatureCopy: "完成一个任务，唤醒灯芽。",
+    dailyProof: "你的每日仪式",
+    dailyProofCopy: "看一件作品，做一个小创作，留下一个记忆。",
     enterStudio: "用这些颜色创作",
     creativeStudio: "创作工作室",
     yourCanvas: "你的画布",
@@ -275,6 +285,8 @@ const copy = {
     parentsPrivacyBody: "不需要账号。看见日记只保存在这个浏览器里。",
     parentsSourcesTitle: "博物馆素材来源",
     parentsSourcesBody: "每日作品来自开放博物馆收藏，并保留来源说明。",
+    parentsRitualTitle: "怎样一起使用",
+    parentsRitualBody: "坐在孩子旁边，问他们看到了什么，不急着纠正答案。目标是注意力，不是标准答案。",
     chooseMore: (count) => `再选 ${count} 个颜色，就能进入工作室。`,
     paletteFound: "很好看。你从作品里找到了自己的配色。",
     piecesMore: (count) => `再放 ${count} 个拼贴元素，就能完成作品。`,
@@ -298,18 +310,18 @@ const copy = {
   },
   fr: {
     appName: "Musée du regard",
-    prototype: "Prototype",
+    prototype: "Rituel du jour",
     overviewLede:
-      "Un prototype d'aventure esthétique pour les enfants de 7 à 9 ans. Cette version teste une boucle complète : explorer un monde, observer une oeuvre, créer quelque chose, puis l'ajouter à sa collection.",
-    flowLabel: "Parcours",
-    flowOne: "Choisir un monde sur la carte",
-    flowTwo: "Jouer la mission Inspiration du jour",
-    flowThree: "Créer avec des couleurs et des formes",
-    flowFour: "Débloquer une nouvelle carte",
-    lookForLabel: "À observer",
-    lookForOne: "Est-ce que cela ressemble à un jeu plutôt qu'à un cours ?",
-    lookForTwo: "La mission mène-t-elle naturellement à la création ?",
-    lookForThree: "La récompense ressemble-t-elle à une identité, pas seulement à des points ?",
+      "Un rituel de musée de 5 minutes pour les enfants curieux : regarder, choisir des couleurs, créer une petite oeuvre et garder un journal du regard.",
+    flowLabel: "Aujourd'hui",
+    flowOne: "Regarder une vraie oeuvre de musée",
+    flowTwo: "Collectionner trois couleurs remarquées",
+    flowThree: "Créer un petit collage d'atelier",
+    flowFour: "Garder la journée dans le journal du regard",
+    lookForLabel: "Pourquoi c'est utile",
+    lookForOne: "Regarder lentement développe l'attention visuelle.",
+    lookForTwo: "Nommer les couleurs construit un langage esthétique.",
+    lookForThree: "Créer à partir de l'observation transforme le regard en souvenir.",
     sessionLabel: "Session",
     statusWorldLabel: "Monde",
     statusMissionLabel: "Mission",
@@ -321,6 +333,8 @@ const copy = {
     todaysGuide: "Guide du jour",
     newCreature: "Nouveau compagnon",
     newCreatureCopy: "Termine une mission pour réveiller la pousse-lanterne.",
+    dailyProof: "Ton rituel",
+    dailyProofCopy: "Ouvre une oeuvre, crée une petite chose, garde un souvenir.",
     enterStudio: "Créer avec ces couleurs",
     creativeStudio: "Atelier créatif",
     yourCanvas: "Ta toile",
@@ -346,6 +360,9 @@ const copy = {
     parentsPrivacyBody: "Aucun compte n'est nécessaire. Le journal du regard reste dans ce navigateur.",
     parentsSourcesTitle: "Sources des musées",
     parentsSourcesBody: "Les oeuvres du jour viennent de collections publiques de musées et gardent leurs crédits.",
+    parentsRitualTitle: "Comment l'utiliser",
+    parentsRitualBody:
+      "Restez près de l'enfant, demandez ce qu'il remarque, et évitez de corriger ses choix. Le but est l'attention, pas la bonne réponse.",
     chooseMore: (count) => `Choisis encore ${count} couleur${count === 1 ? "" : "s"} pour ouvrir l'atelier.`,
     paletteFound: "Très beau. Tu as trouvé une palette dans l'oeuvre.",
     piecesMore: (count) => `Place encore ${count} élément${count === 1 ? "" : "s"} pour terminer ton image.`,
@@ -372,7 +389,7 @@ const copy = {
 const state = {
   activeScreen: "map",
   missionKey: "color",
-  locale: "en",
+  locale: loadLocale(),
   selectedColors: [],
   placedPieces: [],
   checkins: loadCheckins()
@@ -441,6 +458,7 @@ function render() {
 
   guideCopy.textContent = textFor(mission.home);
   newCreatureCopy.textContent = t.newCreatureCopy;
+  dailyProofCopy.textContent = t.dailyProofCopy;
   missionWorld.textContent = textFor(mission.world);
   missionTitle.textContent = textFor(mission.prompt);
   missionArtwork.src = mission.artwork.url;
@@ -635,7 +653,7 @@ function hasTodayCheckin() {
 
 function loadCheckins() {
   try {
-    const checkins = JSON.parse(localStorage.getItem("museumSeeingCheckins") || "[]");
+    const checkins = JSON.parse(localStorage.getItem(CHECKINS_STORAGE_KEY) || "[]");
     return Array.isArray(checkins) ? checkins : [];
   } catch {
     return [];
@@ -643,7 +661,28 @@ function loadCheckins() {
 }
 
 function saveCheckins() {
-  localStorage.setItem("museumSeeingCheckins", JSON.stringify(state.checkins));
+  try {
+    localStorage.setItem(CHECKINS_STORAGE_KEY, JSON.stringify(state.checkins));
+  } catch {
+    // The app remains usable for this session if storage is blocked.
+  }
+}
+
+function loadLocale() {
+  try {
+    const locale = localStorage.getItem(LOCALE_STORAGE_KEY);
+    return ["en", "zh", "fr"].includes(locale) ? locale : "en";
+  } catch {
+    return "en";
+  }
+}
+
+function saveLocale() {
+  try {
+    localStorage.setItem(LOCALE_STORAGE_KEY, state.locale);
+  } catch {
+    // Language switching still works for this session if storage is blocked.
+  }
 }
 
 function formatCheckinDate(date) {
@@ -706,6 +745,7 @@ languageToggle.addEventListener("click", () => {
   const locales = ["en", "zh", "fr"];
   const currentIndex = locales.indexOf(state.locale);
   state.locale = locales[(currentIndex + 1) % locales.length];
+  saveLocale();
   state.selectedColors = [];
   state.placedPieces = [];
   render();
@@ -755,3 +795,9 @@ async function loadDailyMissions() {
 }
 
 initialize();
+
+if ("serviceWorker" in navigator && window.location.protocol !== "file:") {
+  navigator.serviceWorker.register("./service-worker.js").catch(() => {
+    // The app still works online if service worker registration fails.
+  });
+}

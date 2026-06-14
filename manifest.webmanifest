@@ -1,0 +1,18 @@
+{
+  "name": "Museum of Seeing",
+  "short_name": "Seeing",
+  "description": "A 5-minute daily museum ritual for children ages 7-9.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#092634",
+  "theme_color": "#092634",
+  "icons": [
+    {
+      "src": "./assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -69,6 +69,10 @@ button {
   color: #f5d89d;
 }
 
+.overview-panel .eyebrow {
+  color: var(--gold);
+}
+
 .overview-panel h1,
 .screen h2 {
   margin: 0;
@@ -332,6 +336,14 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
+}
+
+.daily-proof-panel {
+  grid-column: 1 / -1;
+  border-color: rgba(228, 179, 79, 0.45);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(228, 179, 79, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(241, 223, 191, 0.14), rgba(241, 223, 191, 0.06));
 }
 
 .mini-panel,
@@ -839,7 +851,10 @@ button {
 }
 
 .parents-panel article {
-  padding: 16px;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(241, 223, 191, 0.16);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .parents-panel h3 {
@@ -875,6 +890,10 @@ button {
 @media (max-width: 980px) {
   .page-shell {
     grid-template-columns: 1fr;
+  }
+
+  .prototype-stage {
+    order: -1;
   }
 
   .overview-panel {
