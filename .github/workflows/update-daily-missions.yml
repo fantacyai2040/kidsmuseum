@@ -27,4 +27,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update daily museum missions"
-          file_pattern: daily-missions.json
+          file_pattern: daily-missions.json museum-library.json
