@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-19T12:19:04.260Z",
+  "updatedAt": "2026-06-20T10:41:38.746Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "sun",
+  "query": "flowers",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at Sahurs Meadows in Morning Sun. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《Sahurs Meadows in Morning Sun》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe Sahurs Meadows in Morning Sun. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at Basket of Flowers. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《Basket of Flowers》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe Basket of Flowers. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,46 +36,46 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "Sahurs Meadows in Morning Sun",
-        "titleZh": "Sahurs Meadows in Morning Sun",
-        "titleFr": "Sahurs Meadows in Morning Sun",
+        "title": "Basket of Flowers",
+        "titleZh": "Basket of Flowers",
+        "titleFr": "Basket of Flowers",
         "credit": {
-          "en": "Alfred Sisley, 1894. The Metropolitan Museum of Art, public domain.",
-          "zh": "Alfred Sisley，1894。大都会艺术博物馆，公有领域。",
-          "fr": "Alfred Sisley, 1894. The Metropolitan Museum of Art, domaine public."
+          "en": "Eugène Delacroix, 1848–49. The Metropolitan Museum of Art, public domain.",
+          "zh": "Eugène Delacroix，1848–49。大都会艺术博物馆，公有领域。",
+          "fr": "Eugène Delacroix, 1848–49. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-20336-001.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-14347-001.jpg"
       },
       "choices": [
         [
           {
-            "en": "Moss Green",
-            "zh": "苔藓绿",
-            "fr": "Vert mousse"
+            "en": "Sun Gold",
+            "zh": "阳光金",
+            "fr": "Or soleil"
           },
-          "#40624f"
+          "#e4b34f"
         ],
         [
           {
-            "en": "Morning Blue",
-            "zh": "清晨蓝",
-            "fr": "Bleu matin"
+            "en": "River Blue",
+            "zh": "河水蓝",
+            "fr": "Bleu rivière"
           },
           "#5c93b8"
         ],
         [
           {
-            "en": "Petal Pink",
-            "zh": "花瓣粉",
-            "fr": "Rose pétale"
+            "en": "Leaf Green",
+            "zh": "叶片绿",
+            "fr": "Vert feuille"
           },
-          "#dd8a80"
+          "#40624f"
         ],
         [
           {
-            "en": "Light Cream",
-            "zh": "浅奶油",
-            "fr": "Crème claire"
+            "en": "Soft Cloud",
+            "zh": "柔云白",
+            "fr": "Nuage doux"
           },
           "#f1dfbf"
         ]
