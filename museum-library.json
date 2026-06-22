@@ -1,89 +1,8 @@
 {
-  "updatedAt": "2026-06-21T11:25:31.355Z",
+  "updatedAt": "2026-06-22T13:44:32.620Z",
   "source": "The Metropolitan Museum of Art Collection API",
   "reviewStatus": "auto-generated candidate",
   "days": [
-    {
-      "date": "2026-06-21",
-      "query": "garden",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at Cremorne Gardens, No. 2. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Cremorne Gardens, No. 2》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Cremorne Gardens, No. 2. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "Cremorne Gardens, No. 2",
-          "titleZh": "Cremorne Gardens, No. 2",
-          "titleFr": "Cremorne Gardens, No. 2",
-          "credit": {
-            "en": "James McNeill Whistler, ca. 1870–80. The Metropolitan Museum of Art, public domain.",
-            "zh": "James McNeill Whistler，ca. 1870–80。大都会艺术博物馆，公有领域。",
-            "fr": "James McNeill Whistler, ca. 1870–80. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/DT2780.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Flower Pink",
-              "zh": "花朵粉",
-              "fr": "Rose fleur"
-            },
-            "#dd8a80"
-          ],
-          [
-            {
-              "en": "Deep Blue",
-              "zh": "深蓝色",
-              "fr": "Bleu profond"
-            },
-            "#25537b"
-          ],
-          [
-            {
-              "en": "Warm Brown",
-              "zh": "暖棕色",
-              "fr": "Brun chaud"
-            },
-            "#8b5d35"
-          ],
-          [
-            {
-              "en": "Quiet Gray",
-              "zh": "安静灰",
-              "fr": "Gris calme"
-            },
-            "#9aa3a0"
-          ]
-        ]
-      }
-    },
     {
       "date": "2026-06-22",
       "query": "landscape",
@@ -261,9 +180,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at Old Trees, Level Distance. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Old Trees, Level Distance》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Old Trees, Level Distance. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at Trees. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Trees》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Trees. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -281,15 +200,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "Old Trees, Level Distance",
-          "titleZh": "Old Trees, Level Distance",
-          "titleFr": "Old Trees, Level Distance",
+          "title": "Trees",
+          "titleZh": "Trees",
+          "titleFr": "Trees",
           "credit": {
-            "en": "Guo Xi, ca. 1080. The Metropolitan Museum of Art, public domain.",
-            "zh": "Guo Xi，ca. 1080。大都会艺术博物馆，公有领域。",
-            "fr": "Guo Xi, ca. 1080. The Metropolitan Museum of Art, domaine public."
+            "en": "David Johnson, 1886. The Metropolitan Museum of Art, public domain.",
+            "zh": "David Johnson，1886。大都会艺术博物馆，公有领域。",
+            "fr": "David Johnson, 1886. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/as/web-large/DP167812_CRD.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/190227.jpg"
         },
         "choices": [
           [
@@ -329,7 +248,7 @@
     },
     {
       "date": "2026-06-25",
-      "query": "garden",
+      "query": "landscape",
       "mission": {
         "world": {
           "en": "Color Harbor",
@@ -342,9 +261,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at The Garden of the Tuileries on a Spring Morning. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《The Garden of the Tuileries on a Spring Morning》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe The Garden of the Tuileries on a Spring Morning. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at A Brazilian Landscape. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《A Brazilian Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe A Brazilian Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -362,15 +281,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "The Garden of the Tuileries on a Spring Morning",
-          "titleZh": "The Garden of the Tuileries on a Spring Morning",
-          "titleFr": "The Garden of the Tuileries on a Spring Morning",
+          "title": "A Brazilian Landscape",
+          "titleZh": "A Brazilian Landscape",
+          "titleFr": "A Brazilian Landscape",
           "credit": {
-            "en": "Camille Pissarro, 1899. The Metropolitan Museum of Art, public domain.",
-            "zh": "Camille Pissarro，1899。大都会艺术博物馆，公有领域。",
-            "fr": "Camille Pissarro, 1899. The Metropolitan Museum of Art, domaine public."
+            "en": "Frans Post, 1650. The Metropolitan Museum of Art, public domain.",
+            "zh": "Frans Post，1650。大都会艺术博物馆，公有领域。",
+            "fr": "Frans Post, 1650. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1042.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP145952.jpg"
         },
         "choices": [
           [
@@ -410,7 +329,7 @@
     },
     {
       "date": "2026-06-26",
-      "query": "garden",
+      "query": "landscape",
       "mission": {
         "world": {
           "en": "Color Harbor",
@@ -423,9 +342,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at Garden View, Brooklyn. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Garden View, Brooklyn》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Garden View, Brooklyn. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at Evening: Landscape with an Aqueduct. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Evening: Landscape with an Aqueduct》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Evening: Landscape with an Aqueduct. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -443,15 +362,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "Garden View, Brooklyn",
-          "titleZh": "Garden View, Brooklyn",
-          "titleFr": "Garden View, Brooklyn",
+          "title": "Evening: Landscape with an Aqueduct",
+          "titleZh": "Evening: Landscape with an Aqueduct",
+          "titleFr": "Evening: Landscape with an Aqueduct",
           "credit": {
-            "en": "Fidelia Bridges, ca. 1867. The Metropolitan Museum of Art, public domain.",
-            "zh": "Fidelia Bridges，ca. 1867。大都会艺术博物馆，公有领域。",
-            "fr": "Fidelia Bridges, ca. 1867. The Metropolitan Museum of Art, domaine public."
+            "en": "Théodore Géricault, 1818. The Metropolitan Museum of Art, public domain.",
+            "zh": "Théodore Géricault，1818。大都会艺术博物馆，公有领域。",
+            "fr": "Théodore Géricault, 1818. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/DP-24073-001.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DT2138.jpg"
         },
         "choices": [
           [
@@ -491,7 +410,7 @@
     },
     {
       "date": "2026-06-27",
-      "query": "garden",
+      "query": "landscape",
       "mission": {
         "world": {
           "en": "Color Harbor",
@@ -504,9 +423,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at The Agony in the Garden. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《The Agony in the Garden》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe The Agony in the Garden. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at Landscapes with poems. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Landscapes with poems》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Landscapes with poems. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -524,15 +443,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "The Agony in the Garden",
-          "titleZh": "The Agony in the Garden",
-          "titleFr": "The Agony in the Garden",
+          "title": "Landscapes with poems",
+          "titleZh": "Landscapes with poems",
+          "titleFr": "Landscapes with poems",
           "credit": {
-            "en": "Raphael (Raffaello Sanzio or Santi), ca. 1504. The Metropolitan Museum of Art, public domain.",
-            "zh": "Raphael (Raffaello Sanzio or Santi)，ca. 1504。大都会艺术博物馆，公有领域。",
-            "fr": "Raphael (Raffaello Sanzio or Santi), ca. 1504. The Metropolitan Museum of Art, domaine public."
+            "en": "Gong Xian, 1688. The Metropolitan Museum of Art, public domain.",
+            "zh": "Gong Xian，1688。大都会艺术博物馆，公有领域。",
+            "fr": "Gong Xian, 1688. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP136373.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/as/web-large/1981_4_1a.jpg"
         },
         "choices": [
           [
@@ -585,9 +504,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at Landscapes with poems. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Landscapes with poems》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Landscapes with poems. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at Seated Giant. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Seated Giant》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Seated Giant. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -605,15 +524,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "Landscapes with poems",
-          "titleZh": "Landscapes with poems",
-          "titleFr": "Landscapes with poems",
+          "title": "Seated Giant",
+          "titleZh": "Seated Giant",
+          "titleFr": "Seated Giant",
           "credit": {
-            "en": "Gong Xian, 1688. The Metropolitan Museum of Art, public domain.",
-            "zh": "Gong Xian，1688。大都会艺术博物馆，公有领域。",
-            "fr": "Gong Xian, 1688. The Metropolitan Museum of Art, domaine public."
+            "en": "Goya (Francisco de Goya y Lucientes), by 1818 (possibly 1814–18). The Metropolitan Museum of Art, public domain.",
+            "zh": "Goya (Francisco de Goya y Lucientes)，by 1818 (possibly 1814–18)。大都会艺术博物馆，公有领域。",
+            "fr": "Goya (Francisco de Goya y Lucientes), by 1818 (possibly 1814–18). The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/as/web-large/1981_4_1a.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP819677.jpg"
         },
         "choices": [
           [
@@ -653,7 +572,7 @@
     },
     {
       "date": "2026-06-29",
-      "query": "landscape",
+      "query": "river",
       "mission": {
         "world": {
           "en": "Color Harbor",
@@ -666,9 +585,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at Seated Giant. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Seated Giant》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Seated Giant. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at A River Glimpse. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《A River Glimpse》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe A River Glimpse. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -686,15 +605,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "Seated Giant",
-          "titleZh": "Seated Giant",
-          "titleFr": "Seated Giant",
+          "title": "A River Glimpse",
+          "titleZh": "A River Glimpse",
+          "titleFr": "A River Glimpse",
           "credit": {
-            "en": "Goya (Francisco de Goya y Lucientes), by 1818 (possibly 1814–18). The Metropolitan Museum of Art, public domain.",
-            "zh": "Goya (Francisco de Goya y Lucientes)，by 1818 (possibly 1814–18)。大都会艺术博物馆，公有领域。",
-            "fr": "Goya (Francisco de Goya y Lucientes), by 1818 (possibly 1814–18). The Metropolitan Museum of Art, domaine public."
+            "en": "Thomas Doughty, ca. 1843–50. The Metropolitan Museum of Art, public domain.",
+            "zh": "Thomas Doughty，ca. 1843–50。大都会艺术博物馆，公有领域。",
+            "fr": "Thomas Doughty, ca. 1843–50. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP819677.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/ap95.17.2.jpg"
         },
         "choices": [
           [
@@ -734,7 +653,7 @@
     },
     {
       "date": "2026-06-30",
-      "query": "landscape",
+      "query": "river",
       "mission": {
         "world": {
           "en": "Color Harbor",
@@ -747,9 +666,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at A Brazilian Landscape. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《A Brazilian Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe A Brazilian Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at A River Landscape. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《A River Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe A River Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -767,15 +686,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "A Brazilian Landscape",
-          "titleZh": "A Brazilian Landscape",
-          "titleFr": "A Brazilian Landscape",
+          "title": "A River Landscape",
+          "titleZh": "A River Landscape",
+          "titleFr": "A River Landscape",
           "credit": {
-            "en": "Frans Post, 1650. The Metropolitan Museum of Art, public domain.",
-            "zh": "Frans Post，1650。大都会艺术博物馆，公有领域。",
-            "fr": "Frans Post, 1650. The Metropolitan Museum of Art, domaine public."
+            "en": "Théodore Rousseau, ca. 1845–50. The Metropolitan Museum of Art, public domain.",
+            "zh": "Théodore Rousseau，ca. 1845–50。大都会艺术博物馆，公有领域。",
+            "fr": "Théodore Rousseau, ca. 1845–50. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP145952.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP274261.jpg"
         },
         "choices": [
           [
@@ -809,6 +728,87 @@
               "fr": "Gris calme"
             },
             "#9aa3a0"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-07-01",
+      "query": "river",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at The River. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《The River》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe The River. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "The River",
+          "titleZh": "The River",
+          "titleFr": "The River",
+          "credit": {
+            "en": "Pierre Puvis de Chavannes, ca. 1864. The Metropolitan Museum of Art, public domain.",
+            "zh": "Pierre Puvis de Chavannes，ca. 1864。大都会艺术博物馆，公有领域。",
+            "fr": "Pierre Puvis de Chavannes, ca. 1864. The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-14201-029.jpg"
+        },
+        "choices": [
+          [
+            {
+              "en": "Sun Gold",
+              "zh": "阳光金",
+              "fr": "Or soleil"
+            },
+            "#e4b34f"
+          ],
+          [
+            {
+              "en": "River Blue",
+              "zh": "河水蓝",
+              "fr": "Bleu rivière"
+            },
+            "#5c93b8"
+          ],
+          [
+            {
+              "en": "Leaf Green",
+              "zh": "叶片绿",
+              "fr": "Vert feuille"
+            },
+            "#40624f"
+          ],
+          [
+            {
+              "en": "Soft Cloud",
+              "zh": "柔云白",
+              "fr": "Nuage doux"
+            },
+            "#f1dfbf"
           ]
         ]
       }

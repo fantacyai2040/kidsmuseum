@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-21T11:25:31.355Z",
+  "updatedAt": "2026-06-22T13:44:32.620Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "garden",
+  "query": "landscape",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at Cremorne Gardens, No. 2. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《Cremorne Gardens, No. 2》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe Cremorne Gardens, No. 2. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at Landscape. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,48 +36,48 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "Cremorne Gardens, No. 2",
-        "titleZh": "Cremorne Gardens, No. 2",
-        "titleFr": "Cremorne Gardens, No. 2",
+        "title": "Landscape",
+        "titleZh": "Landscape",
+        "titleFr": "Landscape",
         "credit": {
-          "en": "James McNeill Whistler, ca. 1870–80. The Metropolitan Museum of Art, public domain.",
-          "zh": "James McNeill Whistler，ca. 1870–80。大都会艺术博物馆，公有领域。",
-          "fr": "James McNeill Whistler, ca. 1870–80. The Metropolitan Museum of Art, domaine public."
+          "en": "Giovanni Larciani (\"Master of the Kress Landscapes\"), 16th century. The Metropolitan Museum of Art, public domain.",
+          "zh": "Giovanni Larciani (\"Master of the Kress Landscapes\")，16th century。大都会艺术博物馆，公有领域。",
+          "fr": "Giovanni Larciani (\"Master of the Kress Landscapes\"), 16th century. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/ad/web-large/DT2780.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP801797.jpg"
       },
       "choices": [
         [
           {
-            "en": "Flower Pink",
-            "zh": "花朵粉",
-            "fr": "Rose fleur"
+            "en": "Moss Green",
+            "zh": "苔藓绿",
+            "fr": "Vert mousse"
+          },
+          "#40624f"
+        ],
+        [
+          {
+            "en": "Morning Blue",
+            "zh": "清晨蓝",
+            "fr": "Bleu matin"
+          },
+          "#5c93b8"
+        ],
+        [
+          {
+            "en": "Petal Pink",
+            "zh": "花瓣粉",
+            "fr": "Rose pétale"
           },
           "#dd8a80"
         ],
         [
           {
-            "en": "Deep Blue",
-            "zh": "深蓝色",
-            "fr": "Bleu profond"
+            "en": "Light Cream",
+            "zh": "浅奶油",
+            "fr": "Crème claire"
           },
-          "#25537b"
-        ],
-        [
-          {
-            "en": "Warm Brown",
-            "zh": "暖棕色",
-            "fr": "Brun chaud"
-          },
-          "#8b5d35"
-        ],
-        [
-          {
-            "en": "Quiet Gray",
-            "zh": "安静灰",
-            "fr": "Gris calme"
-          },
-          "#9aa3a0"
+          "#f1dfbf"
         ]
       ]
     }
