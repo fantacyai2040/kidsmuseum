@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-23T11:31:58.662Z",
+  "updatedAt": "2026-06-24T11:18:49.029Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "river",
+  "query": "trees",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at Hudson River Scene. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《Hudson River Scene》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe Hudson River Scene. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at Trees. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《Trees》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe Trees. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,48 +36,48 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "Hudson River Scene",
-        "titleZh": "Hudson River Scene",
-        "titleFr": "Hudson River Scene",
+        "title": "Trees",
+        "titleZh": "Trees",
+        "titleFr": "Trees",
         "credit": {
-          "en": "John Frederick Kensett, 1857. The Metropolitan Museum of Art, public domain.",
-          "zh": "John Frederick Kensett，1857。大都会艺术博物馆，公有领域。",
-          "fr": "John Frederick Kensett, 1857. The Metropolitan Museum of Art, domaine public."
+          "en": "David Johnson, 1886. The Metropolitan Museum of Art, public domain.",
+          "zh": "David Johnson，1886。大都会艺术博物馆，公有领域。",
+          "fr": "David Johnson, 1886. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/ad/web-large/DT2891.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/ad/web-large/190227.jpg"
       },
       "choices": [
         [
           {
-            "en": "Sun Gold",
-            "zh": "阳光金",
-            "fr": "Or soleil"
+            "en": "Flower Pink",
+            "zh": "花朵粉",
+            "fr": "Rose fleur"
           },
-          "#e4b34f"
+          "#dd8a80"
         ],
         [
           {
-            "en": "River Blue",
-            "zh": "河水蓝",
-            "fr": "Bleu rivière"
+            "en": "Deep Blue",
+            "zh": "深蓝色",
+            "fr": "Bleu profond"
           },
-          "#5c93b8"
+          "#25537b"
         ],
         [
           {
-            "en": "Leaf Green",
-            "zh": "叶片绿",
-            "fr": "Vert feuille"
+            "en": "Warm Brown",
+            "zh": "暖棕色",
+            "fr": "Brun chaud"
           },
-          "#40624f"
+          "#8b5d35"
         ],
         [
           {
-            "en": "Soft Cloud",
-            "zh": "柔云白",
-            "fr": "Nuage doux"
+            "en": "Quiet Gray",
+            "zh": "安静灰",
+            "fr": "Gris calme"
           },
-          "#f1dfbf"
+          "#9aa3a0"
         ]
       ]
     }
