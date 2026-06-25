@@ -2,7 +2,7 @@ name: Update daily museum missions
 
 on:
   schedule:
-    - cron: "17 8 * * *"
+    - cron: "17 8 * * 4"
   workflow_dispatch:
 
 permissions:
