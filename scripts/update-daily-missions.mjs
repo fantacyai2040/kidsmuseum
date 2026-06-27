@@ -15,6 +15,8 @@ const TERMS = [
 
 const MAX_OBJECTS_PER_TERM = 25;
 const MAX_FAILED_OBJECTS_PER_TERM = 12;
+const FETCH_DELAY_MS = 300;
+const FETCH_RETRY_DELAY_MS = 1500;
 
 const BLOCKED_TITLE_WORDS = [
   "death",
@@ -299,9 +301,31 @@ function dateOffset(date, offset) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url);
+  await sleep(FETCH_DELAY_MS);
+
+  let response = await fetch(url, {
+    headers: {
+      "Accept": "application/json",
+      "User-Agent": "kidsmuseum/1.0 (+https://fantacyai2040.github.io/kidsmuseum/)"
+    }
+  });
+
+  if (response.status === 403) {
+    await sleep(FETCH_RETRY_DELAY_MS);
+    response = await fetch(url, {
+      headers: {
+        "Accept": "application/json",
+        "User-Agent": "kidsmuseum/1.0 (+https://fantacyai2040.github.io/kidsmuseum/)"
+      }
+    });
+  }
+
   if (!response.ok) {
     throw new Error(`Fetch failed: ${response.status} ${response.statusText} ${url}`);
   }
   return response.json();
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }

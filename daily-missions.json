@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-25T11:09:29.043Z",
+  "updatedAt": "2026-06-27T01:10:05.061Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "birds",
+  "query": "moon",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at The Dispatch of the Messenger. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《The Dispatch of the Messenger》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe The Dispatch of the Messenger. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at White Plum Blossoms and Moon. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《White Plum Blossoms and Moon》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe White Plum Blossoms and Moon. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,48 +36,48 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "The Dispatch of the Messenger",
-        "titleZh": "The Dispatch of the Messenger",
-        "titleFr": "The Dispatch of the Messenger",
+        "title": "White Plum Blossoms and Moon",
+        "titleZh": "White Plum Blossoms and Moon",
+        "titleFr": "White Plum Blossoms and Moon",
         "credit": {
-          "en": "François Boucher, 1765. The Metropolitan Museum of Art, public domain.",
-          "zh": "François Boucher，1765。大都会艺术博物馆，公有领域。",
-          "fr": "François Boucher, 1765. The Metropolitan Museum of Art, domaine public."
+          "en": "Itō Jakuchū, 1755. The Metropolitan Museum of Art, public domain.",
+          "zh": "Itō Jakuchū，1755。大都会艺术博物馆，公有领域。",
+          "fr": "Itō Jakuchū, 1755. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP337751.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/as/web-large/DP-12232-273.jpg"
       },
       "choices": [
         [
           {
-            "en": "Moss Green",
-            "zh": "苔藓绿",
-            "fr": "Vert mousse"
-          },
-          "#40624f"
-        ],
-        [
-          {
-            "en": "Morning Blue",
-            "zh": "清晨蓝",
-            "fr": "Bleu matin"
-          },
-          "#5c93b8"
-        ],
-        [
-          {
-            "en": "Petal Pink",
-            "zh": "花瓣粉",
-            "fr": "Rose pétale"
+            "en": "Flower Pink",
+            "zh": "花朵粉",
+            "fr": "Rose fleur"
           },
           "#dd8a80"
         ],
         [
           {
-            "en": "Light Cream",
-            "zh": "浅奶油",
-            "fr": "Crème claire"
+            "en": "Deep Blue",
+            "zh": "深蓝色",
+            "fr": "Bleu profond"
           },
-          "#f1dfbf"
+          "#25537b"
+        ],
+        [
+          {
+            "en": "Warm Brown",
+            "zh": "暖棕色",
+            "fr": "Brun chaud"
+          },
+          "#8b5d35"
+        ],
+        [
+          {
+            "en": "Quiet Gray",
+            "zh": "安静灰",
+            "fr": "Gris calme"
+          },
+          "#9aa3a0"
         ]
       ]
     }
