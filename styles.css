@@ -346,6 +346,41 @@ button {
     linear-gradient(180deg, rgba(241, 223, 191, 0.14), rgba(241, 223, 191, 0.06));
 }
 
+.design-lab-panel {
+  grid-column: 1 / -1;
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(221, 138, 128, 0.46);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(221, 138, 128, 0.32), transparent 28%),
+    linear-gradient(135deg, rgba(241, 223, 191, 0.15), rgba(12, 75, 88, 0.36));
+}
+
+.design-lab-panel h3,
+.design-lab-card h3 {
+  margin: 4px 0 6px;
+  font-family: var(--display-font);
+  color: #fff3c8;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.design-lab-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.design-lab-steps span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 248, 232, 0.13);
+  color: #ffe3a1;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
 .mini-panel,
 .artwork-card,
 .studio-canvas,
@@ -855,6 +890,13 @@ button {
   border-radius: 22px;
   border: 1px solid rgba(241, 223, 191, 0.16);
   background: rgba(255, 255, 255, 0.05);
+}
+
+.parents-panel .design-lab-card {
+  border-color: rgba(228, 179, 79, 0.42);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(228, 179, 79, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(241, 223, 191, 0.14), rgba(241, 223, 191, 0.06));
 }
 
 .parents-panel h3 {

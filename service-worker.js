@@ -1,9 +1,9 @@
-const CACHE_NAME = "museum-seeing-2026-06-14-pwa";
+const CACHE_NAME = "museum-seeing-2026-06-26-design-lab";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=2026-06-14-pwa",
-  "./main.js?v=2026-06-14-pwa",
+  "./styles.css?v=2026-06-26-design-lab",
+  "./main.js?v=2026-06-26-design-lab",
   "./manifest.webmanifest",
   "./assets/icons/icon.svg"
 ];

@@ -38,6 +38,12 @@ const worldLabelNodes = [...document.querySelectorAll("[data-world-label]")];
 const collectionTitle = document.querySelector(".collection-header h2");
 const overviewTitle = document.querySelector("#overview-title");
 const dailyProofCopy = document.querySelector("#daily-proof-copy");
+const designLabTitle = document.querySelector("#design-lab-title");
+const designLabKid = document.querySelector("#design-lab-kid");
+const designLabSteps = document.querySelector("#design-lab-steps");
+const parentsDesignTitle = document.querySelector("#parents-design-title");
+const parentsDesignGoal = document.querySelector("#parents-design-goal");
+const parentsDesignPrompt = document.querySelector("#parents-design-prompt");
 const MAX_STUDIO_PIECES = 5;
 const CHECKINS_STORAGE_KEY = "museumSeeingCheckins";
 const LOCALE_STORAGE_KEY = "museumSeeingLocale";
@@ -156,6 +162,78 @@ let missions = {
   }
 };
 
+const designLabs = [
+  {
+    title: { en: "Try white space", zh: "试试留白", fr: "Essaie le vide" },
+    kid: {
+      en: "Leave one quiet area in your collage so the colors can breathe.",
+      zh: "在拼贴里留出一块安静的地方，让颜色可以呼吸。",
+      fr: "Laisse une zone calme dans ton collage pour que les couleurs respirent."
+    },
+    steps: [
+      { en: "Choose a resting spot", zh: "选一个休息点", fr: "Choisis un endroit de repos" },
+      { en: "Keep it almost empty", zh: "让它几乎空着", fr: "Garde-le presque vide" },
+      { en: "Make one color feel louder", zh: "让一个颜色更响亮", fr: "Rends une couleur plus forte" }
+    ],
+    parentGoal: {
+      en: "This week trains composition: children notice that empty space can make an image stronger.",
+      zh: "本周练习构图：孩子会发现，空的地方也能让画面更有力量。",
+      fr: "Cette semaine travaille la composition : l'enfant voit que le vide peut renforcer une image."
+    },
+    parentPrompt: {
+      en: "Ask: where does your eye rest?",
+      zh: "可以问：你的眼睛在哪里休息？",
+      fr: "Demandez : où ton regard se repose-t-il ?"
+    }
+  },
+  {
+    title: { en: "Make contrast", zh: "制造对比", fr: "Crée un contraste" },
+    kid: {
+      en: "Put one soft color beside one strong color and watch what changes.",
+      zh: "把一个柔和颜色放在一个强烈颜色旁边，看看画面怎么变。",
+      fr: "Place une couleur douce près d'une couleur forte et observe ce qui change."
+    },
+    steps: [
+      { en: "Pick soft", zh: "选柔和", fr: "Choisis doux" },
+      { en: "Pick strong", zh: "选强烈", fr: "Choisis fort" },
+      { en: "Place them together", zh: "把它们放在一起", fr: "Place-les ensemble" }
+    ],
+    parentGoal: {
+      en: "This week builds visual comparison: children learn that colors change when they meet.",
+      zh: "本周练习视觉比较：孩子会理解颜色相遇时会互相改变。",
+      fr: "Cette semaine développe la comparaison visuelle : les couleurs changent quand elles se rencontrent."
+    },
+    parentPrompt: {
+      en: "Ask: which color feels stronger now?",
+      zh: "可以问：现在哪个颜色感觉更强？",
+      fr: "Demandez : quelle couleur paraît plus forte maintenant ?"
+    }
+  },
+  {
+    title: { en: "Build rhythm", zh: "做出节奏", fr: "Construis un rythme" },
+    kid: {
+      en: "Repeat a shape three times, then break the pattern once.",
+      zh: "重复一个形状三次，然后故意打破一次规律。",
+      fr: "Répète une forme trois fois, puis casse le rythme une fois."
+    },
+    steps: [
+      { en: "Repeat", zh: "重复", fr: "Répète" },
+      { en: "Move", zh: "移动", fr: "Déplace" },
+      { en: "Surprise", zh: "制造惊喜", fr: "Surprends" }
+    ],
+    parentGoal: {
+      en: "This week introduces rhythm: children feel how repetition creates movement.",
+      zh: "本周引入节奏：孩子会感受到重复如何带来运动感。",
+      fr: "Cette semaine introduit le rythme : la répétition crée du mouvement."
+    },
+    parentPrompt: {
+      en: "Ask: where does the pattern change?",
+      zh: "可以问：规律在哪里发生了变化？",
+      fr: "Demandez : où le motif change-t-il ?"
+    }
+  }
+];
+
 const copy = {
   en: {
     appName: "Museum of Seeing",
@@ -184,6 +262,7 @@ const copy = {
     newCreatureCopy: "Complete one mission to wake the Lantern Sprout.",
     dailyProof: "Your ritual",
     dailyProofCopy: "Open one artwork, make one small thing, keep one memory.",
+    weeklyDesignLab: "Weekly Design Lab",
     enterStudio: "Create with these colors",
     creativeStudio: "Creative Studio",
     yourCanvas: "Your canvas",
@@ -260,6 +339,7 @@ const copy = {
     newCreatureCopy: "完成一个任务，唤醒灯芽。",
     dailyProof: "你的每日仪式",
     dailyProofCopy: "看一件作品，做一个小创作，留下一个记忆。",
+    weeklyDesignLab: "每周设计实验",
     enterStudio: "用这些颜色创作",
     creativeStudio: "创作工作室",
     yourCanvas: "你的画布",
@@ -335,6 +415,7 @@ const copy = {
     newCreatureCopy: "Termine une mission pour réveiller la pousse-lanterne.",
     dailyProof: "Ton rituel",
     dailyProofCopy: "Ouvre une oeuvre, crée une petite chose, garde un souvenir.",
+    weeklyDesignLab: "Laboratoire design",
     enterStudio: "Créer avec ces couleurs",
     creativeStudio: "Atelier créatif",
     yourCanvas: "Ta toile",
@@ -473,6 +554,7 @@ function render() {
   statusCreation.textContent = t.statusPieces(state.placedPieces.length);
 
   renderCompletion(t);
+  renderDesignLab();
   renderCollection(missionDone, creationDone);
 }
 
@@ -497,6 +579,28 @@ function renderChoices(mission) {
     button.dataset.choice = textFor(choice[0]);
     button.style.setProperty("--choice-color", choice[1]);
   });
+}
+
+function renderDesignLab() {
+  const lab = currentDesignLab();
+
+  designLabTitle.textContent = textFor(lab.title);
+  designLabKid.textContent = textFor(lab.kid);
+  designLabSteps.innerHTML = "";
+
+  lab.steps.forEach((step, index) => {
+    const item = document.createElement("span");
+    item.textContent = `${index + 1}. ${textFor(step)}`;
+    designLabSteps.appendChild(item);
+  });
+
+  parentsDesignTitle.textContent = textFor(lab.title);
+  parentsDesignGoal.textContent = textFor(lab.parentGoal);
+  parentsDesignPrompt.textContent = textFor(lab.parentPrompt);
+}
+
+function currentDesignLab() {
+  return designLabs[weekIndex(designLabs.length)];
 }
 
 function colorForChoice(colorName) {
@@ -698,6 +802,13 @@ function todayKey() {
   const month = String(today.getMonth() + 1).padStart(2, "0");
   const date = String(today.getDate()).padStart(2, "0");
   return `${year}-${month}-${date}`;
+}
+
+function weekIndex(length) {
+  const start = new Date("2026-01-01T12:00:00");
+  const today = new Date(`${todayKey()}T12:00:00`);
+  const daysSinceStart = Math.floor((today - start) / 86400000);
+  return Math.floor(daysSinceStart / 7) % length;
 }
 
 for (const button of screenButtons) {
