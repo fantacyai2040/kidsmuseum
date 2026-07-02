@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-27T01:10:05.061Z",
+  "updatedAt": "2026-07-02T10:52:36.098Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "moon",
+  "query": "landscape",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at White Plum Blossoms and Moon. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《White Plum Blossoms and Moon》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe White Plum Blossoms and Moon. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at Landscape. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,15 +36,15 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "White Plum Blossoms and Moon",
-        "titleZh": "White Plum Blossoms and Moon",
-        "titleFr": "White Plum Blossoms and Moon",
+        "title": "Landscape",
+        "titleZh": "Landscape",
+        "titleFr": "Landscape",
         "credit": {
-          "en": "Itō Jakuchū, 1755. The Metropolitan Museum of Art, public domain.",
-          "zh": "Itō Jakuchū，1755。大都会艺术博物馆，公有领域。",
-          "fr": "Itō Jakuchū, 1755. The Metropolitan Museum of Art, domaine public."
+          "en": "Giovanni Larciani (\"Master of the Kress Landscapes\"), 16th century. The Metropolitan Museum of Art, public domain.",
+          "zh": "Giovanni Larciani (\"Master of the Kress Landscapes\")，16th century。大都会艺术博物馆，公有领域。",
+          "fr": "Giovanni Larciani (\"Master of the Kress Landscapes\"), 16th century. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/as/web-large/DP-12232-273.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP801797.jpg"
       },
       "choices": [
         [
