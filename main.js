@@ -44,6 +44,9 @@ const designLabSteps = document.querySelector("#design-lab-steps");
 const parentsDesignTitle = document.querySelector("#parents-design-title");
 const parentsDesignGoal = document.querySelector("#parents-design-goal");
 const parentsDesignPrompt = document.querySelector("#parents-design-prompt");
+const parentsResourceUpdated = document.querySelector("#parents-resource-updated");
+const parentsResourceRange = document.querySelector("#parents-resource-range");
+const parentsResourceSource = document.querySelector("#parents-resource-source");
 const MAX_STUDIO_PIECES = 5;
 const CHECKINS_STORAGE_KEY = "museumSeeingCheckins";
 const LOCALE_STORAGE_KEY = "museumSeeingLocale";
@@ -288,6 +291,12 @@ const copy = {
     parentsPrivacyBody: "No account is required. The seeing diary is stored only in this browser.",
     parentsSourcesTitle: "Museum sources",
     parentsSourcesBody: "Daily artworks come from public museum collections and include source credits.",
+    parentsResourceStatus: "Resource status",
+    parentsResourceUpdated: "Updated",
+    parentsResourceRange: "Coverage",
+    parentsResourceSource: "Source",
+    resourceFallback: "Offline fallback",
+    resourceBundled: "Bundled mission",
     parentsRitualTitle: "How to use it",
     parentsRitualBody:
       "Sit nearby, ask what your child notices, and avoid correcting their choices. The goal is attention, not right answers.",
@@ -365,6 +374,12 @@ const copy = {
     parentsPrivacyBody: "不需要账号。看见日记只保存在这个浏览器里。",
     parentsSourcesTitle: "博物馆素材来源",
     parentsSourcesBody: "每日作品来自开放博物馆收藏，并保留来源说明。",
+    parentsResourceStatus: "素材库状态",
+    parentsResourceUpdated: "更新时间",
+    parentsResourceRange: "覆盖日期",
+    parentsResourceSource: "来源",
+    resourceFallback: "离线备用内容",
+    resourceBundled: "内置任务",
     parentsRitualTitle: "怎样一起使用",
     parentsRitualBody: "坐在孩子旁边，问他们看到了什么，不急着纠正答案。目标是注意力，不是标准答案。",
     chooseMore: (count) => `再选 ${count} 个颜色，就能进入工作室。`,
@@ -441,6 +456,12 @@ const copy = {
     parentsPrivacyBody: "Aucun compte n'est nécessaire. Le journal du regard reste dans ce navigateur.",
     parentsSourcesTitle: "Sources des musées",
     parentsSourcesBody: "Les oeuvres du jour viennent de collections publiques de musées et gardent leurs crédits.",
+    parentsResourceStatus: "État des ressources",
+    parentsResourceUpdated: "Mise à jour",
+    parentsResourceRange: "Période",
+    parentsResourceSource: "Source",
+    resourceFallback: "Version hors ligne",
+    resourceBundled: "Mission intégrée",
     parentsRitualTitle: "Comment l'utiliser",
     parentsRitualBody:
       "Restez près de l'enfant, demandez ce qu'il remarque, et évitez de corriger ses choix. Le but est l'attention, pas la bonne réponse.",
@@ -473,7 +494,8 @@ const state = {
   locale: loadLocale(),
   selectedColors: [],
   placedPieces: [],
-  checkins: loadCheckins()
+  checkins: loadCheckins(),
+  libraryMeta: null
 };
 
 function render() {
@@ -555,6 +577,7 @@ function render() {
 
   renderCompletion(t);
   renderDesignLab();
+  renderResourceStatus(t);
   renderCollection(missionDone, creationDone);
 }
 
@@ -601,6 +624,17 @@ function renderDesignLab() {
 
 function currentDesignLab() {
   return designLabs[weekIndex(designLabs.length)];
+}
+
+function renderResourceStatus(t) {
+  const meta = state.libraryMeta;
+  parentsResourceUpdated.textContent = meta?.updatedAt
+    ? formatResourceDate(meta.updatedAt)
+    : t.resourceFallback;
+  parentsResourceRange.textContent = meta?.firstDate && meta?.lastDate
+    ? formatCoverageRange(meta.firstDate, meta.lastDate)
+    : t.resourceBundled;
+  parentsResourceSource.textContent = meta?.source ?? t.parentsSourcesBody;
 }
 
 function colorForChoice(colorName) {
@@ -796,6 +830,19 @@ function formatCheckinDate(date) {
   }).format(new Date(`${date}T12:00:00`));
 }
 
+function formatResourceDate(date) {
+  return new Intl.DateTimeFormat(state.locale === "zh" ? "zh-CN" : state.locale, {
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  }).format(new Date(date));
+}
+
+function formatCoverageRange(firstDate, lastDate) {
+  return `${formatCheckinDate(firstDate)} - ${formatCheckinDate(lastDate)}`;
+}
+
 function todayKey() {
   const today = new Date();
   const year = today.getFullYear();
@@ -880,6 +927,12 @@ async function loadDailyMissions() {
       const todayEntry = library?.days?.find((entry) => entry.date === todayKey()) || library?.days?.[0];
 
       if (todayEntry?.mission) {
+        state.libraryMeta = {
+          updatedAt: library.updatedAt,
+          firstDate: library.days?.[0]?.date,
+          lastDate: library.days?.at(-1)?.date,
+          source: library.source
+        };
         missions = {
           ...missions,
           color: todayEntry.mission
