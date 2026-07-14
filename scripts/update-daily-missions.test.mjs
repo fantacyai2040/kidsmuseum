@@ -18,3 +18,9 @@ test("Met API requests are paced and 403 responses get one retry", async () => {
   assert.match(source, /response\.status === 403/);
   assert.match(source, /await sleep\(FETCH_RETRY_DELAY_MS\);/);
 });
+
+test("child-sensitive title words are filtered from museum candidates", async () => {
+  const source = await readFile(new URL("./update-daily-missions.mjs", import.meta.url), "utf8");
+
+  assert.match(source, /"agony"/);
+});

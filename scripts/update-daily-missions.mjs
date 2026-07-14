@@ -27,6 +27,7 @@ const BLOCKED_TITLE_WORDS = [
   "crucifixion",
   "rape",
   "abduction",
+  "agony",
   "skull",
   "corpse"
 ];
