@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-30T10:35:10.091Z",
+  "updatedAt": "2026-08-06T10:50:31.425Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "flowers",
+  "query": "birds",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at Flowers. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《Flowers》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe Flowers. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at The Dispatch of the Messenger. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《The Dispatch of the Messenger》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe The Dispatch of the Messenger. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,46 +36,46 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "Flowers",
-        "titleZh": "Flowers",
-        "titleFr": "Flowers",
+        "title": "The Dispatch of the Messenger",
+        "titleZh": "The Dispatch of the Messenger",
+        "titleFr": "The Dispatch of the Messenger",
         "credit": {
-          "en": "Zhang Xiong, date unknown. The Metropolitan Museum of Art, public domain.",
-          "zh": "Zhang Xiong，date unknown。大都会艺术博物馆，公有领域。",
-          "fr": "Zhang Xiong, date unknown. The Metropolitan Museum of Art, domaine public."
+          "en": "François Boucher, 1765. The Metropolitan Museum of Art, public domain.",
+          "zh": "François Boucher，1765。大都会艺术博物馆，公有领域。",
+          "fr": "François Boucher, 1765. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/as/web-large/DP-38294-002.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP337751.jpg"
       },
       "choices": [
         [
           {
-            "en": "Moss Green",
-            "zh": "苔藓绿",
-            "fr": "Vert mousse"
+            "en": "Sun Gold",
+            "zh": "阳光金",
+            "fr": "Or soleil"
           },
-          "#40624f"
+          "#e4b34f"
         ],
         [
           {
-            "en": "Morning Blue",
-            "zh": "清晨蓝",
-            "fr": "Bleu matin"
+            "en": "River Blue",
+            "zh": "河水蓝",
+            "fr": "Bleu rivière"
           },
           "#5c93b8"
         ],
         [
           {
-            "en": "Petal Pink",
-            "zh": "花瓣粉",
-            "fr": "Rose pétale"
+            "en": "Leaf Green",
+            "zh": "叶片绿",
+            "fr": "Vert feuille"
           },
-          "#dd8a80"
+          "#40624f"
         ],
         [
           {
-            "en": "Light Cream",
-            "zh": "浅奶油",
-            "fr": "Crème claire"
+            "en": "Soft Cloud",
+            "zh": "柔云白",
+            "fr": "Nuage doux"
           },
           "#f1dfbf"
         ]
