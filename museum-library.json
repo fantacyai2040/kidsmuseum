@@ -1,578 +1,11 @@
 {
-  "updatedAt": "2026-08-13T09:34:08.488Z",
+  "updatedAt": "2026-08-20T08:58:06.029Z",
   "source": "The Metropolitan Museum of Art Collection API",
   "reviewStatus": "auto-generated candidate",
   "days": [
     {
-      "date": "2026-08-13",
-      "query": "river",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at Shooting the Rapids, Saguenay River. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Shooting the Rapids, Saguenay River》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Shooting the Rapids, Saguenay River. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "Shooting the Rapids, Saguenay River",
-          "titleZh": "Shooting the Rapids, Saguenay River",
-          "titleFr": "Shooting the Rapids, Saguenay River",
-          "credit": {
-            "en": "Winslow Homer, 1905–10. The Metropolitan Museum of Art, public domain.",
-            "zh": "Winslow Homer，1905–10。大都会艺术博物馆，公有领域。",
-            "fr": "Winslow Homer, 1905–10. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/ap11.57.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Flower Pink",
-              "zh": "花朵粉",
-              "fr": "Rose fleur"
-            },
-            "#dd8a80"
-          ],
-          [
-            {
-              "en": "Deep Blue",
-              "zh": "深蓝色",
-              "fr": "Bleu profond"
-            },
-            "#25537b"
-          ],
-          [
-            {
-              "en": "Warm Brown",
-              "zh": "暖棕色",
-              "fr": "Brun chaud"
-            },
-            "#8b5d35"
-          ],
-          [
-            {
-              "en": "Quiet Gray",
-              "zh": "安静灰",
-              "fr": "Gris calme"
-            },
-            "#9aa3a0"
-          ]
-        ]
-      }
-    },
-    {
-      "date": "2026-08-14",
-      "query": "trees",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at Olive Trees. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Olive Trees》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Olive Trees. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "Olive Trees",
-          "titleZh": "Olive Trees",
-          "titleFr": "Olive Trees",
-          "credit": {
-            "en": "Vincent van Gogh, 1889. The Metropolitan Museum of Art, public domain.",
-            "zh": "Vincent van Gogh，1889。大都会艺术博物馆，公有领域。",
-            "fr": "Vincent van Gogh, 1889. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1946.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Moss Green",
-              "zh": "苔藓绿",
-              "fr": "Vert mousse"
-            },
-            "#40624f"
-          ],
-          [
-            {
-              "en": "Morning Blue",
-              "zh": "清晨蓝",
-              "fr": "Bleu matin"
-            },
-            "#5c93b8"
-          ],
-          [
-            {
-              "en": "Petal Pink",
-              "zh": "花瓣粉",
-              "fr": "Rose pétale"
-            },
-            "#dd8a80"
-          ],
-          [
-            {
-              "en": "Light Cream",
-              "zh": "浅奶油",
-              "fr": "Crème claire"
-            },
-            "#f1dfbf"
-          ]
-        ]
-      }
-    },
-    {
-      "date": "2026-08-15",
-      "query": "birds",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at Birds. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Birds》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Birds. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "Birds",
-          "titleZh": "Birds",
-          "titleFr": "Birds",
-          "credit": {
-            "en": "Shibata Zeshin, late 19th century. The Metropolitan Museum of Art, public domain.",
-            "zh": "Shibata Zeshin，late 19th century。大都会艺术博物馆，公有领域。",
-            "fr": "Shibata Zeshin, late 19th century. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/as/web-large/DP205585.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Sun Gold",
-              "zh": "阳光金",
-              "fr": "Or soleil"
-            },
-            "#e4b34f"
-          ],
-          [
-            {
-              "en": "River Blue",
-              "zh": "河水蓝",
-              "fr": "Bleu rivière"
-            },
-            "#5c93b8"
-          ],
-          [
-            {
-              "en": "Leaf Green",
-              "zh": "叶片绿",
-              "fr": "Vert feuille"
-            },
-            "#40624f"
-          ],
-          [
-            {
-              "en": "Soft Cloud",
-              "zh": "柔云白",
-              "fr": "Nuage doux"
-            },
-            "#f1dfbf"
-          ]
-        ]
-      }
-    },
-    {
-      "date": "2026-08-16",
-      "query": "landscape",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at Landscape. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "Landscape",
-          "titleZh": "Landscape",
-          "titleFr": "Landscape",
-          "credit": {
-            "en": "Edgar Degas, 1892. The Metropolitan Museum of Art, public domain.",
-            "zh": "Edgar Degas，1892。大都会艺术博物馆，公有领域。",
-            "fr": "Edgar Degas, 1892. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP815958.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Flower Pink",
-              "zh": "花朵粉",
-              "fr": "Rose fleur"
-            },
-            "#dd8a80"
-          ],
-          [
-            {
-              "en": "Deep Blue",
-              "zh": "深蓝色",
-              "fr": "Bleu profond"
-            },
-            "#25537b"
-          ],
-          [
-            {
-              "en": "Warm Brown",
-              "zh": "暖棕色",
-              "fr": "Brun chaud"
-            },
-            "#8b5d35"
-          ],
-          [
-            {
-              "en": "Quiet Gray",
-              "zh": "安静灰",
-              "fr": "Gris calme"
-            },
-            "#9aa3a0"
-          ]
-        ]
-      }
-    },
-    {
-      "date": "2026-08-17",
-      "query": "landscape",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at A Brazilian Landscape. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《A Brazilian Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe A Brazilian Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "A Brazilian Landscape",
-          "titleZh": "A Brazilian Landscape",
-          "titleFr": "A Brazilian Landscape",
-          "credit": {
-            "en": "Frans Post, 1650. The Metropolitan Museum of Art, public domain.",
-            "zh": "Frans Post，1650。大都会艺术博物馆，公有领域。",
-            "fr": "Frans Post, 1650. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP145952.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Moss Green",
-              "zh": "苔藓绿",
-              "fr": "Vert mousse"
-            },
-            "#40624f"
-          ],
-          [
-            {
-              "en": "Morning Blue",
-              "zh": "清晨蓝",
-              "fr": "Bleu matin"
-            },
-            "#5c93b8"
-          ],
-          [
-            {
-              "en": "Petal Pink",
-              "zh": "花瓣粉",
-              "fr": "Rose pétale"
-            },
-            "#dd8a80"
-          ],
-          [
-            {
-              "en": "Light Cream",
-              "zh": "浅奶油",
-              "fr": "Crème claire"
-            },
-            "#f1dfbf"
-          ]
-        ]
-      }
-    },
-    {
-      "date": "2026-08-18",
-      "query": "landscape",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at Evening: Landscape with an Aqueduct. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Evening: Landscape with an Aqueduct》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Evening: Landscape with an Aqueduct. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "Evening: Landscape with an Aqueduct",
-          "titleZh": "Evening: Landscape with an Aqueduct",
-          "titleFr": "Evening: Landscape with an Aqueduct",
-          "credit": {
-            "en": "Théodore Géricault, 1818. The Metropolitan Museum of Art, public domain.",
-            "zh": "Théodore Géricault，1818。大都会艺术博物馆，公有领域。",
-            "fr": "Théodore Géricault, 1818. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DT2138.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Sun Gold",
-              "zh": "阳光金",
-              "fr": "Or soleil"
-            },
-            "#e4b34f"
-          ],
-          [
-            {
-              "en": "River Blue",
-              "zh": "河水蓝",
-              "fr": "Bleu rivière"
-            },
-            "#5c93b8"
-          ],
-          [
-            {
-              "en": "Leaf Green",
-              "zh": "叶片绿",
-              "fr": "Vert feuille"
-            },
-            "#40624f"
-          ],
-          [
-            {
-              "en": "Soft Cloud",
-              "zh": "柔云白",
-              "fr": "Nuage doux"
-            },
-            "#f1dfbf"
-          ]
-        ]
-      }
-    },
-    {
-      "date": "2026-08-19",
-      "query": "river",
-      "mission": {
-        "world": {
-          "en": "Color Harbor",
-          "zh": "色彩港湾",
-          "fr": "Port des couleurs"
-        },
-        "prompt": {
-          "en": "Find three colors that make this artwork feel alive.",
-          "zh": "找出让这件作品有生命力的三个颜色。",
-          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
-        },
-        "guide": {
-          "en": "Look at Mont Sainte-Victoire and the Viaduct of the Arc River Valley. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Mont Sainte-Victoire and the Viaduct of the Arc River Valley》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Mont Sainte-Victoire and the Viaduct of the Arc River Valley. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
-        },
-        "home": {
-          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
-          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
-          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
-        },
-        "studio": {
-          "en": "Build your daily museum collage.",
-          "zh": "拼出你的今日博物馆作品。",
-          "fr": "Compose ton collage du musée du jour."
-        },
-        "creature": {
-          "en": "Daily Color Finder is awake.",
-          "zh": "今日色彩发现者醒来了。",
-          "fr": "Le chercheur de couleurs du jour est réveillé."
-        },
-        "artwork": {
-          "title": "Mont Sainte-Victoire and the Viaduct of the Arc River Valley",
-          "titleZh": "Mont Sainte-Victoire and the Viaduct of the Arc River Valley",
-          "titleFr": "Mont Sainte-Victoire and the Viaduct of the Arc River Valley",
-          "credit": {
-            "en": "Paul Cézanne, 1882–85. The Metropolitan Museum of Art, public domain.",
-            "zh": "Paul Cézanne，1882–85。大都会艺术博物馆，公有领域。",
-            "fr": "Paul Cézanne, 1882–85. The Metropolitan Museum of Art, domaine public."
-          },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-20099-001.jpg"
-        },
-        "choices": [
-          [
-            {
-              "en": "Flower Pink",
-              "zh": "花朵粉",
-              "fr": "Rose fleur"
-            },
-            "#dd8a80"
-          ],
-          [
-            {
-              "en": "Deep Blue",
-              "zh": "深蓝色",
-              "fr": "Bleu profond"
-            },
-            "#25537b"
-          ],
-          [
-            {
-              "en": "Warm Brown",
-              "zh": "暖棕色",
-              "fr": "Brun chaud"
-            },
-            "#8b5d35"
-          ],
-          [
-            {
-              "en": "Quiet Gray",
-              "zh": "安静灰",
-              "fr": "Gris calme"
-            },
-            "#9aa3a0"
-          ]
-        ]
-      }
-    },
-    {
       "date": "2026-08-20",
-      "query": "river",
+      "query": "flowers",
       "mission": {
         "world": {
           "en": "Color Harbor",
@@ -585,9 +18,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at Hudson River Scene. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《Hudson River Scene》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe Hudson River Scene. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at Basket of Flowers. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Basket of Flowers》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Basket of Flowers. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -605,15 +38,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "Hudson River Scene",
-          "titleZh": "Hudson River Scene",
-          "titleFr": "Hudson River Scene",
+          "title": "Basket of Flowers",
+          "titleZh": "Basket of Flowers",
+          "titleFr": "Basket of Flowers",
           "credit": {
-            "en": "John Frederick Kensett, 1857. The Metropolitan Museum of Art, public domain.",
-            "zh": "John Frederick Kensett，1857。大都会艺术博物馆，公有领域。",
-            "fr": "John Frederick Kensett, 1857. The Metropolitan Museum of Art, domaine public."
+            "en": "Eugène Delacroix, 1848–49. The Metropolitan Museum of Art, public domain.",
+            "zh": "Eugène Delacroix，1848–49。大都会艺术博物馆，公有领域。",
+            "fr": "Eugène Delacroix, 1848–49. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/DT2891.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-14347-001.jpg"
         },
         "choices": [
           [
@@ -653,6 +86,168 @@
     },
     {
       "date": "2026-08-21",
+      "query": "garden",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at Garden View, Brooklyn. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Garden View, Brooklyn》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Garden View, Brooklyn. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "Garden View, Brooklyn",
+          "titleZh": "Garden View, Brooklyn",
+          "titleFr": "Garden View, Brooklyn",
+          "credit": {
+            "en": "Fidelia Bridges, ca. 1867. The Metropolitan Museum of Art, public domain.",
+            "zh": "Fidelia Bridges，ca. 1867。大都会艺术博物馆，公有领域。",
+            "fr": "Fidelia Bridges, ca. 1867. The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/DP-24073-001.jpg"
+        },
+        "choices": [
+          [
+            {
+              "en": "Sun Gold",
+              "zh": "阳光金",
+              "fr": "Or soleil"
+            },
+            "#e4b34f"
+          ],
+          [
+            {
+              "en": "River Blue",
+              "zh": "河水蓝",
+              "fr": "Bleu rivière"
+            },
+            "#5c93b8"
+          ],
+          [
+            {
+              "en": "Leaf Green",
+              "zh": "叶片绿",
+              "fr": "Vert feuille"
+            },
+            "#40624f"
+          ],
+          [
+            {
+              "en": "Soft Cloud",
+              "zh": "柔云白",
+              "fr": "Nuage doux"
+            },
+            "#f1dfbf"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "query": "landscape",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at Seated Giant. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Seated Giant》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Seated Giant. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "Seated Giant",
+          "titleZh": "Seated Giant",
+          "titleFr": "Seated Giant",
+          "credit": {
+            "en": "Goya (Francisco de Goya y Lucientes), by 1818 (possibly 1814–18). The Metropolitan Museum of Art, public domain.",
+            "zh": "Goya (Francisco de Goya y Lucientes)，by 1818 (possibly 1814–18)。大都会艺术博物馆，公有领域。",
+            "fr": "Goya (Francisco de Goya y Lucientes), by 1818 (possibly 1814–18). The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP819677.jpg"
+        },
+        "choices": [
+          [
+            {
+              "en": "Flower Pink",
+              "zh": "花朵粉",
+              "fr": "Rose fleur"
+            },
+            "#dd8a80"
+          ],
+          [
+            {
+              "en": "Deep Blue",
+              "zh": "深蓝色",
+              "fr": "Bleu profond"
+            },
+            "#25537b"
+          ],
+          [
+            {
+              "en": "Warm Brown",
+              "zh": "暖棕色",
+              "fr": "Brun chaud"
+            },
+            "#8b5d35"
+          ],
+          [
+            {
+              "en": "Quiet Gray",
+              "zh": "安静灰",
+              "fr": "Gris calme"
+            },
+            "#9aa3a0"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-08-23",
       "query": "river",
       "mission": {
         "world": {
@@ -699,6 +294,87 @@
         "choices": [
           [
             {
+              "en": "Moss Green",
+              "zh": "苔藓绿",
+              "fr": "Vert mousse"
+            },
+            "#40624f"
+          ],
+          [
+            {
+              "en": "Morning Blue",
+              "zh": "清晨蓝",
+              "fr": "Bleu matin"
+            },
+            "#5c93b8"
+          ],
+          [
+            {
+              "en": "Petal Pink",
+              "zh": "花瓣粉",
+              "fr": "Rose pétale"
+            },
+            "#dd8a80"
+          ],
+          [
+            {
+              "en": "Light Cream",
+              "zh": "浅奶油",
+              "fr": "Crème claire"
+            },
+            "#f1dfbf"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "query": "trees",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at Trees. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Trees》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Trees. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "Trees",
+          "titleZh": "Trees",
+          "titleFr": "Trees",
+          "credit": {
+            "en": "David Johnson, 1886. The Metropolitan Museum of Art, public domain.",
+            "zh": "David Johnson，1886。大都会艺术博物馆，公有领域。",
+            "fr": "David Johnson, 1886. The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/ad/web-large/190227.jpg"
+        },
+        "choices": [
+          [
+            {
               "en": "Sun Gold",
               "zh": "阳光金",
               "fr": "Or soleil"
@@ -733,8 +409,8 @@
       }
     },
     {
-      "date": "2026-08-22",
-      "query": "river",
+      "date": "2026-08-25",
+      "query": "birds",
       "mission": {
         "world": {
           "en": "Color Harbor",
@@ -747,9 +423,9 @@
           "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
         },
         "guide": {
-          "en": "Look at A River Landscape. Which colors arrive first, and which colors stay quietly behind?",
-          "zh": "看看《A River Landscape》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-          "fr": "Observe A River Landscape. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+          "en": "Look at Birds. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Birds》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Birds. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
         },
         "home": {
           "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -767,15 +443,15 @@
           "fr": "Le chercheur de couleurs du jour est réveillé."
         },
         "artwork": {
-          "title": "A River Landscape",
-          "titleZh": "A River Landscape",
-          "titleFr": "A River Landscape",
+          "title": "Birds",
+          "titleZh": "Birds",
+          "titleFr": "Birds",
           "credit": {
-            "en": "Théodore Rousseau, ca. 1845–50. The Metropolitan Museum of Art, public domain.",
-            "zh": "Théodore Rousseau，ca. 1845–50。大都会艺术博物馆，公有领域。",
-            "fr": "Théodore Rousseau, ca. 1845–50. The Metropolitan Museum of Art, domaine public."
+            "en": "Shibata Zeshin, late 19th century. The Metropolitan Museum of Art, public domain.",
+            "zh": "Shibata Zeshin，late 19th century。大都会艺术博物馆，公有领域。",
+            "fr": "Shibata Zeshin, late 19th century. The Metropolitan Museum of Art, domaine public."
           },
-          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP274261.jpg"
+          "url": "https://images.metmuseum.org/CRDImages/as/web-large/DP205585.jpg"
         },
         "choices": [
           [
@@ -809,6 +485,330 @@
               "fr": "Gris calme"
             },
             "#9aa3a0"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "query": "birds",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at The Dispatch of the Messenger. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《The Dispatch of the Messenger》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe The Dispatch of the Messenger. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "The Dispatch of the Messenger",
+          "titleZh": "The Dispatch of the Messenger",
+          "titleFr": "The Dispatch of the Messenger",
+          "credit": {
+            "en": "François Boucher, 1765. The Metropolitan Museum of Art, public domain.",
+            "zh": "François Boucher，1765。大都会艺术博物馆，公有领域。",
+            "fr": "François Boucher, 1765. The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP337751.jpg"
+        },
+        "choices": [
+          [
+            {
+              "en": "Moss Green",
+              "zh": "苔藓绿",
+              "fr": "Vert mousse"
+            },
+            "#40624f"
+          ],
+          [
+            {
+              "en": "Morning Blue",
+              "zh": "清晨蓝",
+              "fr": "Bleu matin"
+            },
+            "#5c93b8"
+          ],
+          [
+            {
+              "en": "Petal Pink",
+              "zh": "花瓣粉",
+              "fr": "Rose pétale"
+            },
+            "#dd8a80"
+          ],
+          [
+            {
+              "en": "Light Cream",
+              "zh": "浅奶油",
+              "fr": "Crème claire"
+            },
+            "#f1dfbf"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "query": "moon",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at Two Men Contemplating the Moon. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Two Men Contemplating the Moon》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Two Men Contemplating the Moon. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "Two Men Contemplating the Moon",
+          "titleZh": "Two Men Contemplating the Moon",
+          "titleFr": "Two Men Contemplating the Moon",
+          "credit": {
+            "en": "Caspar David Friedrich, ca. 1825–30. The Metropolitan Museum of Art, public domain.",
+            "zh": "Caspar David Friedrich，ca. 1825–30。大都会艺术博物馆，公有领域。",
+            "fr": "Caspar David Friedrich, ca. 1825–30. The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-31997-001-NEW.jpg"
+        },
+        "choices": [
+          [
+            {
+              "en": "Sun Gold",
+              "zh": "阳光金",
+              "fr": "Or soleil"
+            },
+            "#e4b34f"
+          ],
+          [
+            {
+              "en": "River Blue",
+              "zh": "河水蓝",
+              "fr": "Bleu rivière"
+            },
+            "#5c93b8"
+          ],
+          [
+            {
+              "en": "Leaf Green",
+              "zh": "叶片绿",
+              "fr": "Vert feuille"
+            },
+            "#40624f"
+          ],
+          [
+            {
+              "en": "Soft Cloud",
+              "zh": "柔云白",
+              "fr": "Nuage doux"
+            },
+            "#f1dfbf"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "query": "water",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at Water. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Water》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Water. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "Water",
+          "titleZh": "Water",
+          "titleFr": "Water",
+          "credit": {
+            "en": "Louis Félix de La Rue, date unknown. The Metropolitan Museum of Art, public domain.",
+            "zh": "Louis Félix de La Rue，date unknown。大都会艺术博物馆，公有领域。",
+            "fr": "Louis Félix de La Rue, date unknown. The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP826250.jpg"
+        },
+        "choices": [
+          [
+            {
+              "en": "Flower Pink",
+              "zh": "花朵粉",
+              "fr": "Rose fleur"
+            },
+            "#dd8a80"
+          ],
+          [
+            {
+              "en": "Deep Blue",
+              "zh": "深蓝色",
+              "fr": "Bleu profond"
+            },
+            "#25537b"
+          ],
+          [
+            {
+              "en": "Warm Brown",
+              "zh": "暖棕色",
+              "fr": "Brun chaud"
+            },
+            "#8b5d35"
+          ],
+          [
+            {
+              "en": "Quiet Gray",
+              "zh": "安静灰",
+              "fr": "Gris calme"
+            },
+            "#9aa3a0"
+          ]
+        ]
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "query": "sun",
+      "mission": {
+        "world": {
+          "en": "Color Harbor",
+          "zh": "色彩港湾",
+          "fr": "Port des couleurs"
+        },
+        "prompt": {
+          "en": "Find three colors that make this artwork feel alive.",
+          "zh": "找出让这件作品有生命力的三个颜色。",
+          "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
+        },
+        "guide": {
+          "en": "Look at Sahurs Meadows in Morning Sun. Which colors arrive first, and which colors stay quietly behind?",
+          "zh": "看看《Sahurs Meadows in Morning Sun》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+          "fr": "Observe Sahurs Meadows in Morning Sun. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        },
+        "home": {
+          "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
+          "zh": "今天有一件新的博物馆作品在等你。你能收集它最有力量的颜色吗？",
+          "fr": "Une nouvelle oeuvre de musée t'attend aujourd'hui. Peux-tu collectionner ses couleurs les plus fortes ?"
+        },
+        "studio": {
+          "en": "Build your daily museum collage.",
+          "zh": "拼出你的今日博物馆作品。",
+          "fr": "Compose ton collage du musée du jour."
+        },
+        "creature": {
+          "en": "Daily Color Finder is awake.",
+          "zh": "今日色彩发现者醒来了。",
+          "fr": "Le chercheur de couleurs du jour est réveillé."
+        },
+        "artwork": {
+          "title": "Sahurs Meadows in Morning Sun",
+          "titleZh": "Sahurs Meadows in Morning Sun",
+          "titleFr": "Sahurs Meadows in Morning Sun",
+          "credit": {
+            "en": "Alfred Sisley, 1894. The Metropolitan Museum of Art, public domain.",
+            "zh": "Alfred Sisley，1894。大都会艺术博物馆，公有领域。",
+            "fr": "Alfred Sisley, 1894. The Metropolitan Museum of Art, domaine public."
+          },
+          "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-20336-001.jpg"
+        },
+        "choices": [
+          [
+            {
+              "en": "Moss Green",
+              "zh": "苔藓绿",
+              "fr": "Vert mousse"
+            },
+            "#40624f"
+          ],
+          [
+            {
+              "en": "Morning Blue",
+              "zh": "清晨蓝",
+              "fr": "Bleu matin"
+            },
+            "#5c93b8"
+          ],
+          [
+            {
+              "en": "Petal Pink",
+              "zh": "花瓣粉",
+              "fr": "Rose pétale"
+            },
+            "#dd8a80"
+          ],
+          [
+            {
+              "en": "Light Cream",
+              "zh": "浅奶油",
+              "fr": "Crème claire"
+            },
+            "#f1dfbf"
           ]
         ]
       }
