@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-27T19:06:20.159Z",
+  "updatedAt": "2026-09-03T12:51:32.740Z",
   "source": "The Metropolitan Museum of Art Collection API",
-  "query": "moon",
+  "query": "river",
   "reviewStatus": "auto-generated candidate",
   "missions": {
     "color": {
@@ -16,9 +16,9 @@
         "fr": "Trouve trois couleurs qui rendent cette oeuvre vivante."
       },
       "guide": {
-        "en": "Look at Two Men Contemplating the Moon. Which colors arrive first, and which colors stay quietly behind?",
-        "zh": "看看《Two Men Contemplating the Moon》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
-        "fr": "Observe Two Men Contemplating the Moon. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
+        "en": "Look at Shooting the Rapids, Saguenay River. Which colors arrive first, and which colors stay quietly behind?",
+        "zh": "看看《Shooting the Rapids, Saguenay River》。哪些颜色最先跳出来？哪些颜色安静地留在后面？",
+        "fr": "Observe Shooting the Rapids, Saguenay River. Quelles couleurs arrivent en premier, et lesquelles restent discrètes ?"
       },
       "home": {
         "en": "A new museum artwork is waiting today. Can you collect its strongest colors?",
@@ -36,48 +36,48 @@
         "fr": "Le chercheur de couleurs du jour est réveillé."
       },
       "artwork": {
-        "title": "Two Men Contemplating the Moon",
-        "titleZh": "Two Men Contemplating the Moon",
-        "titleFr": "Two Men Contemplating the Moon",
+        "title": "Shooting the Rapids, Saguenay River",
+        "titleZh": "Shooting the Rapids, Saguenay River",
+        "titleFr": "Shooting the Rapids, Saguenay River",
         "credit": {
-          "en": "Caspar David Friedrich, ca. 1825–30. The Metropolitan Museum of Art, public domain.",
-          "zh": "Caspar David Friedrich，ca. 1825–30。大都会艺术博物馆，公有领域。",
-          "fr": "Caspar David Friedrich, ca. 1825–30. The Metropolitan Museum of Art, domaine public."
+          "en": "Winslow Homer, 1905–10. The Metropolitan Museum of Art, public domain.",
+          "zh": "Winslow Homer，1905–10。大都会艺术博物馆，公有领域。",
+          "fr": "Winslow Homer, 1905–10. The Metropolitan Museum of Art, domaine public."
         },
-        "url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-31997-001-NEW.jpg"
+        "url": "https://images.metmuseum.org/CRDImages/ad/web-large/ap11.57.jpg"
       },
       "choices": [
         [
           {
-            "en": "Sun Gold",
-            "zh": "阳光金",
-            "fr": "Or soleil"
+            "en": "Flower Pink",
+            "zh": "花朵粉",
+            "fr": "Rose fleur"
           },
-          "#e4b34f"
+          "#dd8a80"
         ],
         [
           {
-            "en": "River Blue",
-            "zh": "河水蓝",
-            "fr": "Bleu rivière"
+            "en": "Deep Blue",
+            "zh": "深蓝色",
+            "fr": "Bleu profond"
           },
-          "#5c93b8"
+          "#25537b"
         ],
         [
           {
-            "en": "Leaf Green",
-            "zh": "叶片绿",
-            "fr": "Vert feuille"
+            "en": "Warm Brown",
+            "zh": "暖棕色",
+            "fr": "Brun chaud"
           },
-          "#40624f"
+          "#8b5d35"
         ],
         [
           {
-            "en": "Soft Cloud",
-            "zh": "柔云白",
-            "fr": "Nuage doux"
+            "en": "Quiet Gray",
+            "zh": "安静灰",
+            "fr": "Gris calme"
           },
-          "#f1dfbf"
+          "#9aa3a0"
         ]
       ]
     }
